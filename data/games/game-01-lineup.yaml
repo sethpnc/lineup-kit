@@ -1,0 +1,111 @@
+# Storm Baseball — Game 1 lineup plan
+# Continuous batting order (all 13). Edit freely.
+
+meta:
+  game: 1
+  innings: 5
+  opponent: Hooks
+  date: 8/22/26
+  time: 9am
+  field: ACP Field 3
+  notes:
+    - Assumed "Jackson" = Jack Beaver
+    - All 13 bat in continuous order
+    - Pitchers locked: Donovan, Cal, Beau, Knox, Jack
+    - Hard rule: no consecutive bench innings
+
+batting_order:
+  - Meer Amin           # 1
+  - Lane Packham        # 2
+  - Gavin Garcia        # 3
+  - Cal Helmedag        # 4 — cleanup
+  - Jiayin Li           # 5
+  - Grayson Pascal      # 6
+  - Knox Pollard        # 7
+  - Jack Beaver         # 8
+  - Beau Tyson          # 9
+  - Donovan Couture     # 10
+  - Colby Hobgood       # 11
+  - Silas Walker        # 12
+  - Elijah Ragland      # 13
+
+defense:
+  inning_1:
+    P: Donovan Couture
+    C: Gavin Garcia
+    1B: Colby Hobgood
+    2B: Lane Packham
+    3B: Grayson Pascal
+    SS: Cal Helmedag
+    LF: Knox Pollard
+    CF: Meer Amin
+    RF: Elijah Ragland
+    bench: [Beau Tyson, Jack Beaver, Jiayin Li, Silas Walker]
+
+  inning_2:
+    P: Cal Helmedag
+    C: Silas Walker
+    1B: Donovan Couture
+    2B: Knox Pollard
+    3B: Beau Tyson
+    SS: Lane Packham
+    LF: Jack Beaver
+    CF: Meer Amin
+    RF: Jiayin Li
+    bench: [Colby Hobgood, Elijah Ragland, Gavin Garcia, Grayson Pascal]
+
+  inning_3:
+    P: Beau Tyson
+    C: Gavin Garcia
+    1B: Colby Hobgood
+    2B: Jack Beaver
+    3B: Grayson Pascal
+    SS: Lane Packham
+    LF: Elijah Ragland
+    CF: Meer Amin
+    RF: Jiayin Li
+    bench: [Cal Helmedag, Donovan Couture, Knox Pollard, Silas Walker]
+
+  inning_4:
+    P: Knox Pollard
+    C: Silas Walker
+    1B: Donovan Couture
+    2B: Lane Packham
+    3B: Grayson Pascal
+    SS: Cal Helmedag
+    LF: Beau Tyson
+    CF: Colby Hobgood
+    RF: Jack Beaver
+    bench: [Elijah Ragland, Gavin Garcia, Jiayin Li, Meer Amin]
+
+  inning_5:
+    P: Jack Beaver
+    C: Gavin Garcia
+    1B: Colby Hobgood
+    2B: Elijah Ragland
+    3B: Knox Pollard
+    SS: Grayson Pascal
+    LF: Jiayin Li
+    CF: Meer Amin
+    RF: Silas Walker
+    bench: [Beau Tyson, Cal Helmedag, Donovan Couture, Lane Packham]
+
+fairness_summary:
+  hard_rule: no consecutive bench innings
+  field_innings: "3–4 each"
+  bench_by_player:
+    Beau: [1, 5]
+    Cal: [3, 5]
+    Colby: [2]
+    Donovan: [3, 5]
+    Elijah: [2, 4]
+    Gavin: [2, 4]
+    Grayson: [2]
+    Jack: [1]
+    Jiayin: [1, 4]
+    Knox: [3]
+    Lane: [5]
+    Meer: [4]
+    Silas: [1, 3]
+  catcher_rotation: [Gavin, Silas, Gavin, Silas, Gavin]
+  ss_rotation: [Cal, Lane, Lane, Cal, Grayson]

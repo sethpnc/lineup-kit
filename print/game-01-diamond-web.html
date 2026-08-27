@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Storm — Game 1 Diamond Draft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0a0a0a;
+        --storm-red: #c8102e;
+        --muted: #5a5a5a;
+        --grass: #e8f0e4;
+        --dirt: #f3e6d4;
+        --line: #c8c8c8;
+        --font-display: "Oswald", "Arial Narrow", sans-serif;
+        --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 1.25rem;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: #d8d8d8;
+      }
+
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 1rem 1.25rem 1.35rem;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+      }
+
+      .draft-banner {
+        margin: 0 0 0.85rem;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid #e0c8c8;
+        background: #fff8f8;
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+
+      .draft-banner strong {
+        color: var(--storm-red);
+        font-family: var(--font-display);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        border-bottom: 2.5px solid var(--storm-red);
+        padding-bottom: 0.55rem;
+        margin-bottom: 0.75rem;
+      }
+
+      header img {
+        height: 52px;
+        width: auto;
+      }
+
+      header .titles {
+        flex: 1;
+      }
+
+      header h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      header p {
+        margin: 0.15rem 0 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .innings {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .innings button {
+        font-family: var(--font-display);
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--ink);
+        padding: 0.35rem 0.7rem;
+        cursor: pointer;
+      }
+
+      .innings button[aria-pressed="true"] {
+        border-color: var(--storm-red);
+        color: var(--storm-red);
+        box-shadow: inset 0 -2px 0 var(--storm-red);
+      }
+
+      .field-wrap {
+        border-top: 2.5px solid var(--storm-red);
+        border: 1px solid var(--line);
+        border-top: 2.5px solid var(--storm-red);
+        background: var(--grass);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .pos-label {
+        font-family: var(--font-display);
+        font-size: 9px;
+        fill: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .pos-name {
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 700;
+        fill: var(--ink);
+      }
+
+      .pos-name.pitcher {
+        fill: var(--storm-red);
+      }
+
+      .bench {
+        margin-top: 0.85rem;
+        border-top: 2.5px solid var(--storm-red);
+        border: 1px solid var(--line);
+        border-top: 2.5px solid var(--storm-red);
+        padding: 0.55rem 0.7rem;
+      }
+
+      .bench h2 {
+        margin: 0 0 0.35rem;
+        font-family: var(--font-display);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--storm-red);
+      }
+
+      .bench ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.85rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .notes {
+        margin: 0.75rem 0 0;
+        color: var(--muted);
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="draft-banner">
+        <strong>Web version</strong> — interactive diamond (one inning at a time).
+        For all five on one printable page, use
+        <a href="game-01-diamonds-print.html">game-01-diamonds-print.html</a>.
+      </p>
+
+      <header>
+        <img src="../data/storm-logo.png" alt="Storm" width="120" height="72" />
+        <div class="titles">
+          <h1>Defensive Diamond</h1>
+          <p>Game 1 · vs Hooks · 8/22/26 · ACP Field 3 · 9am</p>
+        </div>
+      </header>
+
+      <div class="innings" role="tablist" aria-label="Inning">
+        <button type="button" data-inning="1" aria-pressed="true">Inn 1</button>
+        <button type="button" data-inning="2" aria-pressed="false">Inn 2</button>
+        <button type="button" data-inning="3" aria-pressed="false">Inn 3</button>
+        <button type="button" data-inning="4" aria-pressed="false">Inn 4</button>
+        <button type="button" data-inning="5" aria-pressed="false">Inn 5</button>
+      </div>
+
+      <div class="field-wrap">
+        <svg viewBox="0 0 400 460" role="img" aria-labelledby="diamond-title">
+          <title id="diamond-title">Baseball diamond with defensive assignments</title>
+
+          <!-- Outfield grass already from container; infield dirt -->
+          <polygon
+            points="200,360 330,230 200,100 70,230"
+            fill="#f3e6d4"
+            stroke="#d4c4b0"
+            stroke-width="1"
+          />
+
+          <!-- Baseline diamond -->
+          <polygon
+            points="200,360 330,230 200,100 70,230"
+            fill="none"
+            stroke="#9a9a9a"
+            stroke-width="1.5"
+          />
+
+          <!-- Pitcher's mound -->
+          <circle cx="200" cy="250" r="14" fill="#e8d5bc" stroke="#cbb89a" stroke-width="1" />
+
+          <!-- Bases -->
+          <rect x="194" y="352" width="12" height="12" fill="#fff" stroke="#666" stroke-width="1" transform="rotate(45 200 358)" />
+          <rect x="324" y="224" width="12" height="12" fill="#fff" stroke="#666" stroke-width="1" transform="rotate(45 330 230)" />
+          <rect x="194" y="94" width="12" height="12" fill="#fff" stroke="#666" stroke-width="1" transform="rotate(45 200 100)" />
+          <rect x="64" y="224" width="12" height="12" fill="#fff" stroke="#666" stroke-width="1" transform="rotate(45 70 230)" />
+
+          <!-- Position markers + names (updated by JS) -->
+          <!-- CF -->
+          <g class="spot" data-pos="CF" transform="translate(200,42)">
+            <text class="pos-label" text-anchor="middle" y="-10">CF</text>
+            <text class="pos-name" text-anchor="middle" y="8" data-name>Meer</text>
+          </g>
+          <!-- LF -->
+          <g class="spot" data-pos="LF" transform="translate(70,95)">
+            <text class="pos-label" text-anchor="middle" y="-10">LF</text>
+            <text class="pos-name" text-anchor="middle" y="8" data-name>Knox</text>
+          </g>
+          <!-- RF -->
+          <g class="spot" data-pos="RF" transform="translate(330,95)">
+            <text class="pos-label" text-anchor="middle" y="-10">RF</text>
+            <text class="pos-name" text-anchor="middle" y="8" data-name>Elijah</text>
+          </g>
+          <!-- SS -->
+          <g class="spot" data-pos="SS" transform="translate(130,175)">
+            <text class="pos-label" text-anchor="middle" y="-10">SS</text>
+            <text class="pos-name" text-anchor="middle" y="8" data-name>Cal</text>
+          </g>
+          <!-- 2B -->
+          <g class="spot" data-pos="2B" transform="translate(270,175)">
+            <text class="pos-label" text-anchor="middle" y="-10">2B</text>
+            <text class="pos-name" text-anchor="middle" y="8" data-name>Lane</text>
+          </g>
+          <!-- 3B -->
+          <g class="spot" data-pos="3B" transform="translate(95,250)">
+            <text class="pos-label" text-anchor="middle" y="-10">3B</text>
+            <text class="pos-name" text-anchor="middle" y="8" data-name>Grayson</text>
+          </g>
+          <!-- 1B -->
+          <g class="spot" data-pos="1B" transform="translate(305,250)">
+            <text class="pos-label" text-anchor="middle" y="-10">1B</text>
+            <text class="pos-name" text-anchor="middle" y="8" data-name>Colby</text>
+          </g>
+          <!-- P -->
+          <g class="spot" data-pos="P" transform="translate(200,250)">
+            <text class="pos-label" text-anchor="middle" y="-18">P</text>
+            <text class="pos-name pitcher" text-anchor="middle" y="6" data-name>Donovan</text>
+          </g>
+          <!-- C -->
+          <g class="spot" data-pos="C" transform="translate(200,400)">
+            <text class="pos-label" text-anchor="middle" y="-10">C</text>
+            <text class="pos-name" text-anchor="middle" y="8" data-name>Gavin</text>
+          </g>
+        </svg>
+      </div>
+
+      <section class="bench" aria-live="polite">
+        <h2>Bench</h2>
+        <ul id="bench-list">
+          <li>Beau</li>
+          <li>Jack</li>
+          <li>Jiayin</li>
+          <li>Silas</li>
+        </ul>
+      </section>
+
+      <p class="notes">
+        Interactive web view. Print all five innings on one page via
+        game-01-diamonds-print.html.
+      </p>
+    </div>
+
+    <script>
+      const innings = {
+        1: {
+          P: "Donovan",
+          C: "Gavin",
+          "1B": "Colby",
+          "2B": "Lane",
+          "3B": "Grayson",
+          SS: "Cal",
+          LF: "Knox",
+          CF: "Meer",
+          RF: "Elijah",
+          bench: ["Beau", "Jack", "Jiayin", "Silas"],
+        },
+        2: {
+          P: "Cal",
+          C: "Silas",
+          "1B": "Donovan",
+          "2B": "Knox",
+          "3B": "Beau",
+          SS: "Lane",
+          LF: "Jack",
+          CF: "Meer",
+          RF: "Jiayin",
+          bench: ["Colby", "Elijah", "Gavin", "Grayson"],
+        },
+        3: {
+          P: "Beau",
+          C: "Gavin",
+          "1B": "Colby",
+          "2B": "Jack",
+          "3B": "Grayson",
+          SS: "Lane",
+          LF: "Elijah",
+          CF: "Meer",
+          RF: "Jiayin",
+          bench: ["Cal", "Donovan", "Knox", "Silas"],
+        },
+        4: {
+          P: "Knox",
+          C: "Silas",
+          "1B": "Donovan",
+          "2B": "Lane",
+          "3B": "Grayson",
+          SS: "Cal",
+          LF: "Beau",
+          CF: "Colby",
+          RF: "Jack",
+          bench: ["Elijah", "Gavin", "Jiayin", "Meer"],
+        },
+        5: {
+          P: "Jack",
+          C: "Gavin",
+          "1B": "Colby",
+          "2B": "Elijah",
+          "3B": "Knox",
+          SS: "Grayson",
+          LF: "Jiayin",
+          CF: "Meer",
+          RF: "Silas",
+          bench: ["Beau", "Cal", "Donovan", "Lane"],
+        },
+      };
+
+      const benchList = document.getElementById("bench-list");
+      const buttons = document.querySelectorAll(".innings button");
+
+      function showInning(n) {
+        const data = innings[n];
+        document.querySelectorAll(".spot").forEach((spot) => {
+          const pos = spot.dataset.pos;
+          const nameEl = spot.querySelector("[data-name]");
+          nameEl.textContent = data[pos];
+          nameEl.classList.toggle("pitcher", pos === "P");
+        });
+        benchList.innerHTML = data.bench.map((name) => `<li>${name}</li>`).join("");
+        buttons.forEach((btn) => {
+          btn.setAttribute("aria-pressed", btn.dataset.inning === String(n) ? "true" : "false");
+        });
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => showInning(Number(btn.dataset.inning)));
+      });
+
+      showInning(1);
+    </script>
+  </body>
+</html>

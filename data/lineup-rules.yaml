@@ -1,0 +1,38 @@
+# Default lineup / rotation rules — edit to match your league and coaching style.
+
+game:
+  innings: 5
+  field_positions:
+    - P
+    - C
+    - 1B
+    - 2B
+    - 3B
+    - SS
+    - LF
+    - CF
+    - RF
+
+fairness:
+  # Target roughly even bench time across available players
+  balance_bench_time: true
+  # HARD RULE: no player may sit two innings in a row
+  no_consecutive_bench: true
+  # Prefer rotating kids through listed development positions over the season
+  honor_position_priority: true
+
+pitching:
+  # Soft defaults for 13–15 rec; override per game
+  max_innings_per_game: 2
+  prefer_listed_pitchers_first: true
+
+defense:
+  # Positions that usually need stronger arms / experience
+  priority_positions: [P, C, SS, CF]
+  # OF slots when a player only lists OF (assign LF/CF/RF as needed)
+  outfield_slots: [LF, CF, RF]
+
+batting:
+  # Placeholder philosophy — refine after you share preferences
+  # Options later: power/contact/speed, protect weaker hitters, etc.
+  style: balanced

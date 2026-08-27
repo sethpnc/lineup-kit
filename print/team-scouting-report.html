@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Storm Baseball — Team Scouting Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0a0a0a;
+        --storm-red: #c8102e;
+        --muted: #555;
+        --rule: #c8c8c8;
+        --tint: #f7f7f7;
+        --font-display: "Oswald", "Arial Narrow", sans-serif;
+        --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        color: var(--ink);
+        background: #cfcfcf;
+        font-family: var(--font-body);
+        font-size: 10.5px;
+        line-height: 1.25;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .screen-only {
+        max-width: 8.5in;
+        margin: 0.5rem auto 0;
+        padding: 0 0.4in;
+        font-size: 0.85rem;
+        color: #333;
+      }
+
+      .sheet {
+        width: 8.5in;
+        height: 11in;
+        margin: 0.35in auto;
+        padding: 0.32in 0.38in 0.28in;
+        background: #fff;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .masthead {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 0.5rem 0.7rem;
+        border-bottom: 2.5px solid var(--storm-red);
+        padding-bottom: 0.28rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .logo {
+        height: 0.62in;
+        width: auto;
+        display: block;
+      }
+
+      .doc-title {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .doc-sub {
+        margin: 0.12rem 0 0;
+        font-family: var(--font-display);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--storm-red);
+      }
+
+      .badge {
+        text-align: right;
+        font-size: 0.72rem;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      .badge strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+
+      .panel-title {
+        margin: 0 0 0.22rem;
+        font-family: var(--font-display);
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--storm-red);
+        font-weight: 600;
+      }
+
+      .team-strip {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 0;
+        border-top: 2.5px solid var(--storm-red);
+        border: 1px solid var(--rule);
+        border-top: 2.5px solid var(--storm-red);
+        margin-bottom: 0.4rem;
+      }
+
+      .team-strip .stat {
+        padding: 0.28rem 0.2rem;
+        text-align: center;
+        border-right: 1px solid var(--rule);
+      }
+
+      .team-strip .stat:last-child {
+        border-right: none;
+      }
+
+      .team-strip .lbl {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 0.55rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.1rem;
+      }
+
+      .team-strip .val {
+        font-family: var(--font-display);
+        font-size: 1.05rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .columns {
+        display: grid;
+        grid-template-columns: 1.55fr 1fr;
+        gap: 0.45rem;
+        flex: 1;
+        min-height: 0;
+      }
+
+      .stats-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-top: 2.5px solid var(--storm-red);
+        table-layout: fixed;
+      }
+
+      .stats-table th,
+      .stats-table td {
+        border: 1px solid var(--rule);
+        padding: 0.2rem 0.22rem;
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .stats-table th {
+        font-family: var(--font-display);
+        font-size: 0.58rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--muted);
+        background: #fff;
+      }
+
+      .stats-table td.name {
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.88rem;
+        padding-left: 0.28rem;
+      }
+
+      .stats-table tbody tr:nth-child(even) td {
+        background: var(--tint);
+      }
+
+      .stats-table .hot td {
+        font-weight: 600;
+      }
+
+      .stats-table .hot td.name {
+        color: var(--storm-red);
+      }
+
+      .stats-table .dim td {
+        color: #777;
+      }
+
+      .side {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        min-height: 0;
+      }
+
+      .card {
+        border: 1px solid var(--rule);
+        border-top: 2.5px solid var(--storm-red);
+        padding: 0.35rem 0.4rem 0.4rem;
+        flex: 1;
+      }
+
+      .card ul {
+        margin: 0;
+        padding: 0 0 0 0.95rem;
+      }
+
+      .card li {
+        margin: 0 0 0.28rem;
+        font-size: 0.82rem;
+      }
+
+      .card li strong {
+        color: var(--ink);
+      }
+
+      .card p {
+        margin: 0 0 0.35rem;
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .leaders {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.2rem 0.45rem;
+        font-size: 0.8rem;
+      }
+
+      .leaders div {
+        border-bottom: 1px solid #e6e6e6;
+        padding: 0.18rem 0;
+      }
+
+      .leaders .k {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 0.55rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .pitch-line {
+        margin-top: 0.35rem;
+        padding-top: 0.3rem;
+        border-top: 1px solid var(--rule);
+        font-size: 0.78rem;
+      }
+
+      footer {
+        margin-top: 0.35rem;
+        padding-top: 0.25rem;
+        border-top: 1.5px solid var(--ink);
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        font-size: 0.65rem;
+        color: var(--muted);
+      }
+
+      footer strong {
+        color: var(--ink);
+      }
+
+      @media print {
+        @page {
+          size: letter portrait;
+          margin: 0.35in;
+        }
+
+        html,
+        body {
+          background: #fff;
+        }
+
+        .screen-only {
+          display: none !important;
+        }
+
+        .sheet {
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+          width: auto;
+          height: auto;
+          min-height: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="screen-only">
+      Team scouting report (1 page). <kbd>Cmd</kbd>+<kbd>P</kbd> → PDF or printer.
+      Refresh after updating <code>data/stats/stats.csv</code>.
+    </p>
+
+    <article class="sheet">
+      <header class="masthead">
+        <img class="logo" src="../data/storm-logo.png" alt="Storm" width="180" height="108" />
+        <div>
+          <h1 class="doc-title">Team Scouting Report</h1>
+          <p class="doc-sub">13U–15U Rec · Batting snapshot</p>
+        </div>
+        <div class="badge">
+          <strong>Through Game 1</strong>
+          vs Hooks · 8/22/26<br />
+          Source: GameChanger export
+        </div>
+      </header>
+
+      <h2 class="panel-title">Team batting</h2>
+      <div class="team-strip" aria-label="Team batting totals">
+        <div class="stat"><span class="lbl">PA</span><span class="val">24</span></div>
+        <div class="stat"><span class="lbl">AB</span><span class="val">20</span></div>
+        <div class="stat"><span class="lbl">AVG</span><span class="val">.350</span></div>
+        <div class="stat"><span class="lbl">OBP</span><span class="val">.458</span></div>
+        <div class="stat"><span class="lbl">OPS</span><span class="val">.908</span></div>
+        <div class="stat"><span class="lbl">H</span><span class="val">7</span></div>
+        <div class="stat"><span class="lbl">RBI</span><span class="val">5</span></div>
+        <div class="stat"><span class="lbl">BB</span><span class="val">4</span></div>
+        <div class="stat"><span class="lbl">K</span><span class="val">7</span></div>
+      </div>
+
+      <div class="columns">
+        <section>
+          <h2 class="panel-title">Player batting</h2>
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th style="width: 1.55in; text-align: left; padding-left: 0.28rem">Player</th>
+                <th>PA</th>
+                <th>AB</th>
+                <th>AVG</th>
+                <th>OBP</th>
+                <th>OPS</th>
+                <th>H</th>
+                <th>RBI</th>
+                <th>BB</th>
+                <th>K</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hot">
+                <td class="name">Gavin Garcia</td>
+                <td>3</td><td>3</td><td>.667</td><td>.667</td><td>1.333</td><td>2</td><td>1</td><td>0</td><td>0</td>
+              </tr>
+              <tr class="hot">
+                <td class="name">Knox Pollard</td>
+                <td>2</td><td>1</td><td>1.000</td><td>1.000</td><td>2.000</td><td>1</td><td>0</td><td>1</td><td>0</td>
+              </tr>
+              <tr class="hot">
+                <td class="name">Lane Packham</td>
+                <td>3</td><td>2</td><td>.500</td><td>.667</td><td>1.167</td><td>1</td><td>0</td><td>1</td><td>0</td>
+              </tr>
+              <tr class="hot">
+                <td class="name">Cal Helmedag</td>
+                <td>2</td><td>2</td><td>.500</td><td>.500</td><td>2.000</td><td>1</td><td>1</td><td>0</td><td>0</td>
+              </tr>
+              <tr>
+                <td class="name">Jack Beaver</td>
+                <td>2</td><td>2</td><td>.500</td><td>.500</td><td>1.000</td><td>1</td><td>1</td><td>0</td><td>0</td>
+              </tr>
+              <tr>
+                <td class="name">Grayson Pascal</td>
+                <td>2</td><td>2</td><td>.500</td><td>.500</td><td>1.000</td><td>1</td><td>1</td><td>0</td><td>1</td>
+              </tr>
+              <tr>
+                <td class="name">Silas Walker</td>
+                <td>2</td><td>0</td><td>—</td><td>1.000</td><td>1.000</td><td>0</td><td>0</td><td>2</td><td>0</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Donovan Couture</td>
+                <td>2</td><td>2</td><td>.000</td><td>.000</td><td>.000</td><td>0</td><td>1</td><td>0</td><td>1</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Elijah Ragland</td>
+                <td>2</td><td>2</td><td>.000</td><td>.000</td><td>.000</td><td>0</td><td>0</td><td>0</td><td>1</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Beau Tyson</td>
+                <td>2</td><td>2</td><td>.000</td><td>.000</td><td>.000</td><td>0</td><td>0</td><td>0</td><td>2</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Jiayin Li</td>
+                <td>2</td><td>2</td><td>.000</td><td>.000</td><td>.000</td><td>0</td><td>0</td><td>0</td><td>2</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Meer Amin</td>
+                <td>0</td><td>0</td><td>—</td><td>—</td><td>—</td><td>0</td><td>0</td><td>0</td><td>0</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Colby Hobgood</td>
+                <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <aside class="side">
+          <section class="card">
+            <h2 class="panel-title">Key strengths</h2>
+            <ul>
+              <li><strong>On-base topside</strong> — Team OBP .458; Lane, Knox, Silas reach base often.</li>
+              <li><strong>Middle-of-order pop</strong> — Cal (3B), Gavin (2 H), Jack/Grayson driving runs.</li>
+              <li><strong>Quality ABs</strong> — Team QAB% 54%; Gavin &amp; Jack at 100%.</li>
+              <li><strong>Run game</strong> — 4 SB, 100% (Gavin, Knox, Lane, Grayson).</li>
+              <li><strong>Pitching depth</strong> — Donovan (W) &amp; Beau (SV, 3 K) shut down Game 1.</li>
+              <li><strong>Defense up the middle</strong> — Lane/Grayson/Gavin/Silas cover SS–C.</li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h2 class="panel-title">Leaders &amp; watch</h2>
+            <div class="leaders">
+              <div><span class="k">AVG</span> Gavin .667</div>
+              <div><span class="k">OBP</span> Knox / Silas 1.000</div>
+              <div><span class="k">OPS</span> Cal / Knox 2.000</div>
+              <div><span class="k">H</span> Gavin 2</div>
+              <div><span class="k">BB</span> Silas 2</div>
+              <div><span class="k">K (bat)</span> Beau / Jiayin 2</div>
+            </div>
+            <div class="pitch-line">
+              <strong>Pitching (G1):</strong> Donovan 2.0 IP, 0 ER, W · Beau 2.0 IP, 0 ER, 3 K, SV · Cal 1.0 IP, 3 ER<br />
+              <strong>Watch:</strong> Contact (Beau, Jiayin, Elijah) · Meer needs PAs · Colby missing from export · Sample = 1 game
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <footer>
+        <div><strong>Storm Baseball</strong> · Scouting report · Print when stats.csv updates</div>
+        <div>OBP = on-base pct (OBS) · K = strikeouts · Red names = top OBP/OPS group</div>
+      </footer>
+    </article>
+  </body>
+</html>

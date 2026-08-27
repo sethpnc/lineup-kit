@@ -1,0 +1,87 @@
+# Team roster — edit freely.
+# positions: ordered by preference (first = highest priority).
+# Add strengths, weaknesses, and notes as observations accumulate.
+# Numeric stats live in data/stats/stats.csv (not here).
+
+team:
+  name: Storm Baseball 13-15
+  innings_per_game: 5
+
+players:
+  - name: Beau Tyson
+    positions: [P, 3B, OF]
+    strengths: []
+    weaknesses: [hitting, Fielding]
+    notes: []
+
+  - name: Cal Helmedag
+    positions: [P, SS, OF, 3B, 1B, 2B]
+    strengths: []
+    weaknesses: []
+    notes: [likely cleanup hitter]
+
+  - name: Colby Hobgood
+    positions: [1B, OF]
+    strengths: []
+    weaknesses: []
+    notes: []
+
+  - name: Donovan Couture
+    positions: [P, 1B]
+    strengths: [Pitching, hitting]
+    weaknesses: []
+    notes: []
+
+  - name: Elijah Ragland
+    positions: [OF, 2B]
+    strengths: [fielding]
+    weaknesses: [hitting]
+    notes: []
+
+  - name: Gavin Garcia
+    positions: [C, OF]
+    strengths: [Hitting, catching]
+    weaknesses: []
+    notes: []
+
+  - name: Grayson Pascal
+    positions: [SS, 3B, 2B]
+    strengths: [fielding]
+    weaknesses: []
+    notes: []
+
+  - name: Jack Beaver
+    positions: [P, OF, 3B, 2B]
+    strengths: []
+    weaknesses: []
+    notes: []
+
+  - name: Jiayin Li
+    positions: [OF]
+    strengths: [Hitting]
+    weaknesses: [throwing, fielding]
+    notes: []
+
+  - name: Knox Pollard
+    positions: [OF, 2B, 3B, SS]
+    strengths: []
+    weaknesses: []
+    notes: []
+
+  - name: Lane Packham
+    positions: [SS, 2B, C, P]
+    strengths: [Fielding, Hitting]
+    weaknesses: []
+    notes: [Good leadoff hitter]
+
+  - name: Meer Amin
+    positions: [CF, 3B, 2B]
+    strengths: [Hitting for power]
+    weaknesses: []
+    notes: []
+
+  - name: Silas Walker
+    positions: [C, OF]
+    strengths: [Catching]
+    weaknesses: []
+    notes: []
