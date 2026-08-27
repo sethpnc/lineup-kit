@@ -6,7 +6,7 @@ Single **letter-size** sheet used every time a game plan is finalized.
 
 1. **Masthead** — Storm logo + `GAME LINEUP` + game #
 2. **Game meta** — Opponent / Date / Field·Time (hand-fill)
-3. **Left: Batting order** — single vertical strip, full names 1–13
+3. **Left: Batting order** — single vertical strip, first name + last initial (e.g. `Lane P.`) 1–13
 4. **Right: Defense matrix** — large cells for pen edits; positions × innings 1–5; bench row
 5. **Footer** — pitch plan + standing rules
 
@@ -45,4 +45,5 @@ When the coach finalizes a lineup:
 2. Write/update `print/game-XX.html` from this template + `lineup.css`
 3. Leave opponent/date/field blank unless provided
 4. Defense cells stay large (write-in friendly); batting stays compact on top
-5. Optionally refresh diamond web + print pages if those are in use
+5. Player names on every print/web sheet: **first name + last initial** (e.g. `Meer A.`), including batting, defense, bench, diamonds, and scouting report. Keep full names in YAML / roster only.
+6. Optionally refresh diamond web + print pages if those are in use
