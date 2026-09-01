@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Storm Baseball</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <style>
+      body {
+        margin: 0;
+        background: var(--page);
+        font-family: var(--font-body);
+        color: var(--ink);
+      }
+
+      .home {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 1.25rem 1.1rem 2rem;
+      }
+
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem 1.25rem;
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-top: 3px solid var(--storm-red);
+        padding: 1rem 1.15rem 1.15rem;
+        margin-bottom: 1.1rem;
+      }
+
+      .hero img {
+        height: 64px;
+        width: auto;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 1.65rem;
+      }
+
+      .hero p {
+        margin: 0.25rem 0 0;
+        color: var(--muted);
+      }
+
+      h2 {
+        margin: 0 0 0.65rem;
+        font-family: var(--font-display);
+        font-size: 0.82rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--storm-red);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+        gap: 0.85rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-top: 3px solid var(--storm-red);
+        padding: 0.85rem 1rem 1rem;
+      }
+
+      .card h3 {
+        margin: 0 0 0.2rem;
+        font-family: var(--font-display);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 1.05rem;
+      }
+
+      .card .meta {
+        margin: 0 0 0.65rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      .card ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .card li {
+        margin: 0.28rem 0;
+      }
+
+      .card a {
+        color: var(--storm-red);
+      }
+    </style>
+    <script src="assets/js/theme.js"></script>
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a class="brand" href="index.html" aria-current="page"
+        ><img src="assets/storm-logo.png" alt="" /> Storm</a
+      >
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="scouting.html">Scouting</a>
+      <a href="games/game-01/lineup.html">Game 1</a>
+      <a href="games/game-02/lineup.html">Game 2</a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">Dark</button>
+    </nav>
+
+    <main class="home">
+      <header class="hero">
+        <img src="assets/storm-logo.png" alt="Storm" width="180" height="108" />
+        <div>
+          <h1>Storm Baseball</h1>
+          <p>13U–15U Rec · Lineups, diamonds, and team scouting</p>
+        </div>
+      </header>
+
+      <h2>Team</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Scouting report</h3>
+          <p class="meta">Season hitting &amp; pitching · sortable tables</p>
+          <ul>
+            <li><a href="scouting.html">Open web report</a></li>
+          </ul>
+        </article>
+      </div>
+
+      <h2>Games</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Game 1</h3>
+          <p class="meta">vs Hooks · 8/22/26 · ACP Field 3 · 9am</p>
+          <ul>
+            <li><a href="games/game-01/lineup.html">Lineup</a></li>
+            <li><a href="games/game-01/diamonds.html">Diamond (by inning)</a></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Game 2</h3>
+          <p class="meta">vs Mud Hens · 8/29/26 · ACP Field 3 · 1pm · Home</p>
+          <ul>
+            <li><a href="games/game-02/lineup.html">Lineup</a></li>
+            <li><a href="games/game-02/diamonds.html">Diamond (by inning)</a></li>
+          </ul>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

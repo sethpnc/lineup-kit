@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Storm Baseball — Team Scouting Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/scouting.css" />
+    <script src="assets/js/theme.js"></script>
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a class="brand" href="index.html"><img src="assets/storm-logo.png" alt="" /> Storm</a>
+      <a href="index.html">Home</a>
+      <a href="scouting.html" aria-current="page">Scouting</a>
+      <a href="games/game-01/lineup.html">Game 1</a>
+      <a href="games/game-02/lineup.html">Game 2</a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">Dark</button>
+    </nav>
+
+    <div class="page">
+      <header class="masthead">
+        <img class="logo" src="assets/storm-logo.png" alt="Storm" width="180" height="108" />
+        <div class="titles">
+          <h1>Team Scouting Report</h1>
+          <p class="sub">13U–15U Rec · Web view · Hitting &amp; pitching</p>
+        </div>
+        <div class="badge">
+          <strong>Through Game 2</strong>
+          Export 9/1/26 · 2 games<br />
+          Source: GameChanger
+        </div>
+      </header>
+
+      <p class="print-link">
+        Screen layout with sortable tables.
+        One-page print sheet: <a href="print/team-scouting-report.html">team-scouting-report.html</a>.
+      </p>
+
+      <div class="team-strip" aria-label="Team batting totals">
+        <div class="stat"><span class="lbl">PA</span><span class="val">46</span></div>
+        <div class="stat"><span class="lbl">AB</span><span class="val">33</span></div>
+        <div class="stat"><span class="lbl">AVG</span><span class="val">.242</span></div>
+        <div class="stat"><span class="lbl">OBP</span><span class="val">.457</span></div>
+        <div class="stat"><span class="lbl">OPS</span><span class="val">.760</span></div>
+        <div class="stat"><span class="lbl">H</span><span class="val">8</span></div>
+        <div class="stat"><span class="lbl">BB</span><span class="val">11</span></div>
+        <div class="stat"><span class="lbl">K</span><span class="val">16</span></div>
+        <div class="stat"><span class="lbl">SB</span><span class="val">9</span></div>
+      </div>
+
+      <div class="insights">
+        <section class="insight" aria-labelledby="hit-title">
+          <h2 id="hit-title">Hitting</h2>
+          <h3>Strengths</h3>
+          <ul>
+            <li>
+              <strong>On-base first.</strong> Team OBP .457 on 11 walks. Lane P. (leadoff, 3 BB)
+              and Silas W. (3 BB + HBP, never needed a hit) set the table; Knox P. is in the same
+              club.
+            </li>
+            <li>
+              <strong>Top of the order produces.</strong> Lane P., Gavin G., and Cal H. are all
+              OPS 1.100+. Gavin G. has the only multi-hit line and a 100% quality-AB rate. Cal H.
+              has the only extra-base hit (triple) and 2 RBI.
+            </li>
+            <li>
+              <strong>Pressure on the bases.</strong> 9 stolen bases, 0 caught. Lane P. 3, Gavin G. 2.
+              Quality ABs sit at 57% as a team.
+            </li>
+          </ul>
+          <h3 class="growth">Areas of growth</h3>
+          <ul>
+            <li>
+              <strong>Contact in the lower third.</strong> 16 K in 33 AB. Jiayin L. (4 K) and
+              Donovan C. (3 K) are chasing; Beau T. and Elijah R. have not found a hit yet.
+            </li>
+            <li>
+              <strong>Put the ball in play with extra-base intent.</strong> Team SLG is only .303.
+              Meer A. is the extra-base threat and still has 1 PA. Colby H. is a 1-PA sample.
+            </li>
+          </ul>
+        </section>
+
+        <section class="insight" aria-labelledby="pitch-title">
+          <h2 id="pitch-title">Pitching</h2>
+          <h3>Strengths</h3>
+          <ul>
+            <li>
+              <strong>Game 1 arms still look like the closer kit.</strong> Donovan C. (2.0 IP, 0 ER,
+              W) and Beau T. (2.0 IP, 0 ER, 3 K, SV) have not allowed a run.
+            </li>
+            <li>
+              <strong>Strike one, short innings when it works.</strong> Team first-pitch strike rate
+              is 73%. Four 1-2-3 innings and five innings of 13 pitches or fewer in 9.0 IP.
+            </li>
+          </ul>
+          <h3 class="growth">Areas of growth</h3>
+          <ul>
+            <li>
+              <strong>Free bases once the starter is stretched.</strong> Jack B. (2.0 IP, L) and
+              Knox P. (2.0 IP) both sit at a 10.50 ERA: 3 ER each, 6 BB and 7 hits combined. Knox P.
+              added 2 wild pitches and 5 stolen bases allowed.
+            </li>
+            <li>
+              <strong>Need more than two clean innings.</strong> Team ERA 7.00 and WHIP 1.89. Cal H.
+              (1.0 IP, 4 H, 3 ER) is off the mound for now; Lane P. still has 0 IP. Catching allowed
+              7 SB and 0 CS — hold runners when Gavin G. is behind the plate.
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="panel">
+        <h2>Player batting</h2>
+        <p class="hint">Click a column to sort. Red names = OPS 1.000 or better. Sample = 2 games.</p>
+        <div class="table-wrap">
+          <table id="batting" class="sortable">
+            <thead>
+              <tr>
+                <th class="name" data-type="text" aria-sort="none">
+                  <button type="button">Player <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">PA <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">AB <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">AVG <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">OBP <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="descending">
+                  <button type="button">OPS <span class="sort-ind" aria-hidden="true">↓</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">H <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">RBI <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">BB <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">K <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">SB <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">QAB% <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hot">
+                <td class="name">Meer A.</td>
+                <td>1</td><td>1</td><td>1.000</td><td>1.000</td><td>2.000</td>
+                <td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-sort="0">0%</td>
+              </tr>
+              <tr class="hot">
+                <td class="name">Cal H.</td>
+                <td>4</td><td>3</td><td>.333</td><td>.500</td><td>1.500</td>
+                <td>1</td><td>2</td><td>1</td><td>1</td><td>0</td><td>75%</td>
+              </tr>
+              <tr class="hot">
+                <td class="name">Lane P.</td>
+                <td>5</td><td>2</td><td>.500</td><td>.800</td><td>1.300</td>
+                <td>1</td><td>0</td><td>3</td><td>0</td><td>3</td><td>80%</td>
+              </tr>
+              <tr class="hot">
+                <td class="name">Knox P.</td>
+                <td>4</td><td>2</td><td>.500</td><td>.750</td><td>1.250</td>
+                <td>1</td><td>0</td><td>2</td><td>1</td><td>1</td><td>50%</td>
+              </tr>
+              <tr class="hot">
+                <td class="name">Gavin G.</td>
+                <td>5</td><td>4</td><td>.500</td><td>.600</td><td>1.100</td>
+                <td>2</td><td>1</td><td>1</td><td>1</td><td>2</td><td>100%</td>
+              </tr>
+              <tr class="hot">
+                <td class="name">Silas W.</td>
+                <td>4</td><td>0</td><td data-sort="-1">—</td><td>1.000</td><td>1.000</td>
+                <td>0</td><td>0</td><td>3</td><td>0</td><td>1</td><td>75%</td>
+              </tr>
+              <tr>
+                <td class="name">Grayson P.</td>
+                <td>4</td><td>3</td><td>.333</td><td>.500</td><td>.833</td>
+                <td>1</td><td>2</td><td>0</td><td>2</td><td>1</td><td>25%</td>
+              </tr>
+              <tr>
+                <td class="name">Jack B.</td>
+                <td>4</td><td>4</td><td>.250</td><td>.250</td><td>.500</td>
+                <td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>75%</td>
+              </tr>
+              <tr>
+                <td class="name">Elijah R.</td>
+                <td>3</td><td>2</td><td>.000</td><td>.333</td><td>.333</td>
+                <td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>33%</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Beau T.</td>
+                <td>3</td><td>3</td><td>.000</td><td>.000</td><td>.000</td>
+                <td>0</td><td>0</td><td>0</td><td>2</td><td>0</td><td>67%</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Colby H.</td>
+                <td>1</td><td>1</td><td>.000</td><td>.000</td><td>.000</td>
+                <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0%</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Donovan C.</td>
+                <td>4</td><td>4</td><td>.000</td><td>.000</td><td>.000</td>
+                <td>0</td><td>1</td><td>0</td><td>3</td><td>0</td><td>25%</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Jiayin L.</td>
+                <td>4</td><td>4</td><td>.000</td><td>.000</td><td>.000</td>
+                <td>0</td><td>0</td><td>0</td><td>4</td><td>0</td><td>25%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="team-strip pitch" aria-label="Team pitching totals">
+        <div class="stat"><span class="lbl">IP</span><span class="val">9.0</span></div>
+        <div class="stat"><span class="lbl">ERA</span><span class="val">7.00</span></div>
+        <div class="stat"><span class="lbl">WHIP</span><span class="val">1.89</span></div>
+        <div class="stat"><span class="lbl">H</span><span class="val">11</span></div>
+        <div class="stat"><span class="lbl">ER</span><span class="val">9</span></div>
+        <div class="stat"><span class="lbl">BB</span><span class="val">6</span></div>
+        <div class="stat"><span class="lbl">K</span><span class="val">6</span></div>
+        <div class="stat"><span class="lbl">W-L-SV</span><span class="val">1-1-1</span></div>
+      </div>
+
+      <section class="panel">
+        <h2>Pitching (IP &gt; 0)</h2>
+        <p class="hint">Click a column to sort. Default is innings pitched.</p>
+        <div class="table-wrap">
+          <table id="pitching" class="sortable">
+            <thead>
+              <tr>
+                <th class="name" data-type="text" aria-sort="none">
+                  <button type="button">Player <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="descending">
+                  <button type="button">IP <span class="sort-ind" aria-hidden="true">↓</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">H <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">ER <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">BB <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">K <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">ERA <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="number" aria-sort="none">
+                  <button type="button">WHIP <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+                <th data-type="text" aria-sort="none">
+                  <button type="button">Dec <span class="sort-ind" aria-hidden="true">↕</span></button>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hot">
+                <td class="name">Donovan C.</td>
+                <td>2.0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                <td>0.00</td><td>0.00</td><td>W</td>
+              </tr>
+              <tr class="hot">
+                <td class="name">Beau T.</td>
+                <td>2.0</td><td>0</td><td>0</td><td>0</td><td>3</td>
+                <td>0.00</td><td>0.00</td><td>SV</td>
+              </tr>
+              <tr>
+                <td class="name">Jack B.</td>
+                <td>2.0</td><td>3</td><td>3</td><td>3</td><td>0</td>
+                <td>10.50</td><td>3.00</td><td>L</td>
+              </tr>
+              <tr>
+                <td class="name">Knox P.</td>
+                <td>2.0</td><td>4</td><td>3</td><td>3</td><td>3</td>
+                <td>10.50</td><td>3.50</td><td>—</td>
+              </tr>
+              <tr class="dim">
+                <td class="name">Cal H.</td>
+                <td>1.0</td><td>4</td><td>3</td><td>0</td><td>0</td>
+                <td>21.00</td><td>4.00</td><td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>
+        Storm Baseball · Rebuild after updating <code>data/stats/stats.csv</code> ·
+        Printable batting snapshot:
+        <a href="print/team-scouting-report.html">team-scouting-report.html</a>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        function cellValue(td, type) {
+          if (td.hasAttribute("data-sort")) {
+            var rawAttr = td.getAttribute("data-sort");
+            if (type === "number") return Number(rawAttr);
+            return rawAttr;
+          }
+          var raw = (td.textContent || "").trim();
+          if (type === "number") {
+            if (raw === "—" || raw === "-" || raw === "") return Number.NEGATIVE_INFINITY;
+            return Number(raw.replace(/%/g, ""));
+          }
+          return raw.toLowerCase();
+        }
+
+        function indicator(state) {
+          if (state === "ascending") return "↑";
+          if (state === "descending") return "↓";
+          return "↕";
+        }
+
+        function bindTable(table) {
+          var heads = table.querySelectorAll("thead th");
+          heads.forEach(function (th, col) {
+            var btn = th.querySelector("button");
+            if (!btn) return;
+            btn.addEventListener("click", function () {
+              var type = th.getAttribute("data-type") || "text";
+              var current = th.getAttribute("aria-sort");
+              var next = current === "descending" ? "ascending" : "descending";
+              heads.forEach(function (other) {
+                other.setAttribute("aria-sort", "none");
+                var mark = other.querySelector(".sort-ind");
+                if (mark) mark.textContent = indicator("none");
+              });
+              th.setAttribute("aria-sort", next);
+              var mark = th.querySelector(".sort-ind");
+              if (mark) mark.textContent = indicator(next);
+
+              var tbody = table.tBodies[0];
+              var rows = Array.prototype.slice.call(tbody.rows);
+              var dir = next === "ascending" ? 1 : -1;
+              rows.sort(function (a, b) {
+                var av = cellValue(a.cells[col], type);
+                var bv = cellValue(b.cells[col], type);
+                if (av < bv) return -1 * dir;
+                if (av > bv) return 1 * dir;
+                return 0;
+              });
+              rows.forEach(function (row) {
+                tbody.appendChild(row);
+              });
+            });
+          });
+        }
+
+        document.querySelectorAll("table.sortable").forEach(bindTable);
+      })();
+    </script>
+  
+  </body>
+</html>

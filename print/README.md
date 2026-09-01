@@ -1,13 +1,28 @@
-# Printable lineup design
+# Printable sheets
 
-Single **letter-size** sheet used every time a game plan is finalized.
+Letter-size HTML used for paper/PDF. **Web** lineups and diamonds live under [`../games/`](../games/), not here.
 
-## Layout (always the same)
+## Files
+
+| Sheet | File |
+|--------|------|
+| Game 1 lineup | [`game-01-lineup.html`](game-01-lineup.html) |
+| Game 1 diamonds (6-up) | [`game-01-diamonds.html`](game-01-diamonds.html) |
+| Game 2 lineup | [`game-02-lineup.html`](game-02-lineup.html) |
+| Game 2 diamonds (6-up) | [`game-02-diamonds.html`](game-02-diamonds.html) |
+| Game 2 scoring | [`game-02-scoring.html`](game-02-scoring.html) |
+| Team scouting (1 page) | [`team-scouting-report.html`](team-scouting-report.html) |
+
+Shared styles: [`lineup.css`](lineup.css), [`scoring-sheet.css`](scoring-sheet.css). Logo: [`../assets/storm-logo.png`](../assets/storm-logo.png) (copy of `data/storm-logo.png`).
+
+PDFs (when generated) go in [`pdf/`](pdf/).
+
+## Layout (lineup)
 
 1. **Masthead** — Storm logo + `GAME LINEUP` + game #
-2. **Game meta** — Opponent / Date / Field·Time (hand-fill)
-3. **Left: Batting order** — single vertical strip, first name + last initial (e.g. `Lane P.`) 1–13
-4. **Right: Defense matrix** — large cells for pen edits; positions × innings 1–5; bench row
+2. **Game meta** — Opponent / Date / Field·Time
+3. **Left: Batting order** — first name + last initial
+4. **Right: Defense matrix** — positions × innings 1–5; bench row
 5. **Footer** — pitch plan + standing rules
 
 ## Visual system
@@ -18,22 +33,12 @@ Single **letter-size** sheet used every time a game plan is finalized.
 | Black (`#0a0a0a`) | Ink, table borders (no solid header fills) |
 | Very light red tint | Pitching row only |
 | Light gray | Bench row only |
-| Logo | `data/storm-logo.png` |
 
-Avoid solid red or black background blocks — they print heavy and muddy.
-
-## Diamond views (optional)
-
-- **Web (interactive):** [`game-01-diamond-web.html`](game-01-diamond-web.html) — one diamond, switch innings
-- **Print (6-up):** [`game-01-diamonds-print.html`](game-01-diamonds-print.html) — letter page, innings 1–5 filled + blank inning 6 for write-ins
-
-## Team scouting report
-
-One-page printable batting snapshot (logo + team totals + player table + strengths): [`team-scouting-report.html`](team-scouting-report.html). Rebuild after updating `data/stats/stats.csv`.
+Avoid solid red or black background blocks.
 
 ## How to print
 
-1. Open the game HTML (e.g. [`game-01.html`](game-01.html) or [`game-01-diamonds-print.html`](game-01-diamonds-print.html))  
+1. Open the print HTML  
 2. `Cmd+P` → PDF or printer  
 3. Enable **background graphics** if you want grass/dirt tints  
 
@@ -42,8 +47,8 @@ One-page printable batting snapshot (logo + team totals + player table + strengt
 When the coach finalizes a lineup:
 
 1. Save/update `data/games/game-XX-lineup.yaml`
-2. Write/update `print/game-XX.html` from this template + `lineup.css`
-3. Leave opponent/date/field blank unless provided
-4. Defense cells stay large (write-in friendly); batting stays compact on top
-5. Player names on every print/web sheet: **first name + last initial** (e.g. `Meer A.`), including batting, defense, bench, diamonds, and scouting report. Keep full names in YAML / roster only.
-6. Optionally refresh diamond web + print pages if those are in use
+2. Write/update **web** `games/game-XX/lineup.html` and `diamonds.html`
+3. Write/update **print** `print/game-XX-lineup.html` (and diamonds / scoring as needed)
+4. Keep opponent/date/field blank unless provided
+5. Names on every print/web sheet: **first name + last initial**. Full names in YAML / roster only.
+6. Update [`index.html`](../index.html) when adding a new game
