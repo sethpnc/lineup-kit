@@ -9,6 +9,7 @@
   --muted: #555;
   --rule: #bbb;
   --bench-bg: #f5f5f5;
+  --pitch-bg: #f8ecee;
   --col-header-bg: #f0f0f0;
   --row-header-bg: #f6f6f6;
   --cell-border: #c8c8c8;
@@ -320,6 +321,27 @@ body {
   white-space: nowrap;
 }
 
+.def-table tr.pitch-row td.player {
+  background: var(--pitch-bg);
+}
+
+.def-table .player.dual {
+  white-space: normal;
+  line-height: 1.15;
+  height: auto;
+  min-height: 0.58in;
+  overflow: visible;
+}
+
+.def-table .player .relief {
+  display: block;
+  margin-top: 0.08rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-style: italic;
+}
+
 .def-table tr.bench-row td {
   background: var(--bench-bg);
   font-size: 1.02rem;
@@ -374,6 +396,11 @@ body {
 .footer strong {
   color: var(--ink);
   font-weight: 700;
+}
+
+.footer .hint {
+  display: block;
+  margin-top: 0.12rem;
 }
 
 .screen-only {

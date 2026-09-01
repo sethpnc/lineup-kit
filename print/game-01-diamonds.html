@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Storm — Game 1 Diamonds (Print)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0a0a0a;
+        --storm-red: #c8102e;
+        --muted: #555;
+        --dirt: #f3e6d4;
+        --line: #c8c8c8;
+        --font-display: "Oswald", "Arial Narrow", sans-serif;
+        --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        color: var(--ink);
+        background: #cfcfcf;
+        font-family: var(--font-body);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .screen-only {
+        max-width: 8.5in;
+        margin: 0.5rem auto 0;
+        padding: 0 0.4in;
+        font-size: 0.85rem;
+        color: #333;
+      }
+
+      .sheet {
+        width: 8.5in;
+        height: 11in;
+        margin: 0.25in auto;
+        padding: 0.18in 0.28in 0.16in;
+        background: #fff;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 0.3rem 0.5rem;
+        border-bottom: 2px solid var(--storm-red);
+        padding-bottom: 0.12rem;
+        margin-bottom: 0.14rem;
+        flex: 0 0 auto;
+      }
+
+      header img {
+        height: 0.38in;
+        width: auto;
+      }
+
+      header h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      header .meta {
+        margin: 0.04rem 0 0;
+        color: var(--muted);
+        font-size: 0.6rem;
+      }
+
+      .game-badge {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: var(--storm-red);
+        border: 1.5px solid var(--ink);
+        padding: 0.08rem 0.28rem;
+        text-align: center;
+        line-height: 1;
+      }
+
+      .game-badge span {
+        display: block;
+        font-size: 0.45rem;
+        letter-spacing: 0.12em;
+        color: var(--ink);
+        font-weight: 500;
+        margin-bottom: 0.05rem;
+      }
+
+      .grid {
+        flex: 1 1 0;
+        min-height: 0;
+        height: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 0.1rem 0.16rem;
+      }
+
+      .inning-cell {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+      }
+
+      .inning-label {
+        font-family: var(--font-display);
+        font-size: 0.58rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--storm-red);
+        font-weight: 600;
+        padding: 0 0.06in 0.05rem;
+        flex: 0 0 auto;
+        line-height: 1;
+      }
+
+      .card {
+        position: relative;
+        flex: 1 1 0;
+        min-height: 0;
+        border: 1px solid var(--line);
+        border-top: 2px solid var(--storm-red);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .inn-num {
+        position: absolute;
+        top: 0.08in;
+        left: 0.1in;
+        z-index: 2;
+        font-family: var(--font-display);
+        font-size: 1.85rem;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--storm-red);
+        letter-spacing: -0.04em;
+        pointer-events: none;
+      }
+
+      .diamond {
+        flex: 1 1 0;
+        min-height: 0;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .diamond svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+      }
+
+      .pos-label {
+        font-family: var(--font-display);
+        font-size: 7px;
+        fill: var(--muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .pos-name {
+        font-family: var(--font-body);
+        font-size: 17px;
+        font-weight: 500;
+        fill: var(--ink);
+      }
+
+      .pos-name.pitcher {
+        fill: var(--storm-red);
+      }
+
+      .write-line {
+        stroke: #d0d0d0;
+        stroke-width: 1;
+      }
+
+      .bench-title {
+        font-family: var(--font-display);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        fill: var(--storm-red);
+      }
+
+      .bench-name {
+        font-family: var(--font-body);
+        font-size: 11px;
+        font-weight: 600;
+        fill: var(--ink);
+      }
+
+      footer {
+        margin-top: 0.1rem;
+        padding-top: 0.1rem;
+        border-top: 1px solid var(--ink);
+        font-size: 0.52rem;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        flex: 0 0 auto;
+      }
+
+      footer strong {
+        color: var(--ink);
+      }
+
+      @media print {
+        @page {
+          size: letter portrait;
+          margin: 0.2in;
+        }
+
+        html,
+        body {
+          background: #fff;
+        }
+
+        .screen-only {
+          display: none !important;
+        }
+
+        .sheet {
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+          width: 8.1in;
+          height: 10.6in;
+          max-height: 10.6in;
+          overflow: hidden;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="screen-only">
+      Print version — innings 1–5 filled + blank inning 6 on one letter page.
+      Bench sits beside catcher. <kbd>Cmd</kbd>+<kbd>P</kbd>. Web version:
+      Web version:
+      <a href="../games/game-01/diamonds.html">Game 1 diamond</a>
+    </p>
+
+    <article class="sheet">
+      <header>
+        <img src="../assets/storm-logo.png" alt="Storm" width="160" height="96" />
+        <div>
+          <h1>Defensive Diamonds</h1>
+          <p class="meta">vs Hooks · 8/22/26 · ACP Field 3 · 9am</p>
+        </div>
+        <div class="game-badge"><span>Game</span>1</div>
+      </header>
+
+      <div class="grid">
+        <!-- Inning 1 -->
+        <div class="inning-cell">
+        <div class="inning-label">Inning</div>
+        <section class="card">
+          <div class="inn-num">1</div>
+          <div class="diamond">
+            <svg viewBox="0 0 400 385" aria-hidden="true">
+              <polygon points="200,310 310,200 200,90 90,200" fill="#f3e6d4" stroke="none" />
+              <!-- Foul lines (home → beyond 3B / 1B) + outfield arc -->
+              <line x1="200" y1="310" x2="12" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <line x1="200" y1="310" x2="388" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <path d="M 12 122 C 70 -28 330 -28 388 122" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <polygon points="200,310 310,200 200,90 90,200" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <circle cx="200" cy="215" r="11" fill="#e8d5bc" stroke="#cbb89a" stroke-width="1" />
+              <g transform="translate(200,32)"><text class="pos-label" text-anchor="middle" y="-6">CF</text><text class="pos-name" text-anchor="middle" y="10">Meer A.</text></g>
+              <g transform="translate(70,82)"><text class="pos-label" text-anchor="middle" y="-6">LF</text><text class="pos-name" text-anchor="middle" y="10">Knox P.</text></g>
+              <g transform="translate(330,82)"><text class="pos-label" text-anchor="middle" y="-6">RF</text><text class="pos-name" text-anchor="middle" y="10">Elijah R.</text></g>
+              <g transform="translate(138,152)"><text class="pos-label" text-anchor="middle" y="-6">SS</text><text class="pos-name" text-anchor="middle" y="10">Cal H.</text></g>
+              <g transform="translate(262,152)"><text class="pos-label" text-anchor="middle" y="-6">2B</text><text class="pos-name" text-anchor="middle" y="10">Lane P.</text></g>
+              <g transform="translate(95,215)"><text class="pos-label" text-anchor="middle" y="-6">3B</text><text class="pos-name" text-anchor="middle" y="10">Grayson P.</text></g>
+              <g transform="translate(305,215)"><text class="pos-label" text-anchor="middle" y="-6">1B</text><text class="pos-name" text-anchor="middle" y="10">Colby H.</text></g>
+              <g transform="translate(200,215)"><text class="pos-label" text-anchor="middle" y="-16">P</text><text class="pos-name pitcher" text-anchor="middle" y="8">Donovan C.</text></g>
+              <g transform="translate(200,348)"><text class="pos-label" text-anchor="middle" y="-6">C</text><text class="pos-name" text-anchor="middle" y="10">Gavin G.</text></g>
+              <g transform="translate(10,295)">
+                <text class="bench-title" x="0" y="0">Bench:</text>
+                <text class="bench-name" x="0" y="16">- Beau T.</text>
+                <text class="bench-name" x="0" y="32">- Jack B.</text>
+                <text class="bench-name" x="0" y="48">- Jiayin L.</text>
+                <text class="bench-name" x="0" y="64">- Silas W.</text>
+              </g>
+            </svg>
+          </div>
+        </section>
+        </div>
+
+        <!-- Inning 2 -->
+        <div class="inning-cell">
+        <div class="inning-label">Inning</div>
+        <section class="card">
+          <div class="inn-num">2</div>
+          <div class="diamond">
+            <svg viewBox="0 0 400 385" aria-hidden="true">
+              <polygon points="200,310 310,200 200,90 90,200" fill="#f3e6d4" stroke="none" />
+              <!-- Foul lines (home → beyond 3B / 1B) + outfield arc -->
+              <line x1="200" y1="310" x2="12" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <line x1="200" y1="310" x2="388" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <path d="M 12 122 C 70 -28 330 -28 388 122" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <polygon points="200,310 310,200 200,90 90,200" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <circle cx="200" cy="215" r="11" fill="#e8d5bc" stroke="#cbb89a" stroke-width="1" />
+              <g transform="translate(200,32)"><text class="pos-label" text-anchor="middle" y="-6">CF</text><text class="pos-name" text-anchor="middle" y="10">Meer A.</text></g>
+              <g transform="translate(70,82)"><text class="pos-label" text-anchor="middle" y="-6">LF</text><text class="pos-name" text-anchor="middle" y="10">Jack B.</text></g>
+              <g transform="translate(330,82)"><text class="pos-label" text-anchor="middle" y="-6">RF</text><text class="pos-name" text-anchor="middle" y="10">Jiayin L.</text></g>
+              <g transform="translate(138,152)"><text class="pos-label" text-anchor="middle" y="-6">SS</text><text class="pos-name" text-anchor="middle" y="10">Lane P.</text></g>
+              <g transform="translate(262,152)"><text class="pos-label" text-anchor="middle" y="-6">2B</text><text class="pos-name" text-anchor="middle" y="10">Knox P.</text></g>
+              <g transform="translate(95,215)"><text class="pos-label" text-anchor="middle" y="-6">3B</text><text class="pos-name" text-anchor="middle" y="10">Beau T.</text></g>
+              <g transform="translate(305,215)"><text class="pos-label" text-anchor="middle" y="-6">1B</text><text class="pos-name" text-anchor="middle" y="10">Donovan C.</text></g>
+              <g transform="translate(200,215)"><text class="pos-label" text-anchor="middle" y="-16">P</text><text class="pos-name pitcher" text-anchor="middle" y="8">Cal H.</text></g>
+              <g transform="translate(200,348)"><text class="pos-label" text-anchor="middle" y="-6">C</text><text class="pos-name" text-anchor="middle" y="10">Silas W.</text></g>
+              <g transform="translate(10,295)">
+                <text class="bench-title" x="0" y="0">Bench:</text>
+                <text class="bench-name" x="0" y="16">- Colby H.</text>
+                <text class="bench-name" x="0" y="32">- Elijah R.</text>
+                <text class="bench-name" x="0" y="48">- Gavin G.</text>
+                <text class="bench-name" x="0" y="64">- Grayson P.</text>
+              </g>
+            </svg>
+          </div>
+        </section>
+        </div>
+
+        <!-- Inning 3 -->
+        <div class="inning-cell">
+        <div class="inning-label">Inning</div>
+        <section class="card">
+          <div class="inn-num">3</div>
+          <div class="diamond">
+            <svg viewBox="0 0 400 385" aria-hidden="true">
+              <polygon points="200,310 310,200 200,90 90,200" fill="#f3e6d4" stroke="none" />
+              <!-- Foul lines (home → beyond 3B / 1B) + outfield arc -->
+              <line x1="200" y1="310" x2="12" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <line x1="200" y1="310" x2="388" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <path d="M 12 122 C 70 -28 330 -28 388 122" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <polygon points="200,310 310,200 200,90 90,200" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <circle cx="200" cy="215" r="11" fill="#e8d5bc" stroke="#cbb89a" stroke-width="1" />
+              <g transform="translate(200,32)"><text class="pos-label" text-anchor="middle" y="-6">CF</text><text class="pos-name" text-anchor="middle" y="10">Meer A.</text></g>
+              <g transform="translate(70,82)"><text class="pos-label" text-anchor="middle" y="-6">LF</text><text class="pos-name" text-anchor="middle" y="10">Elijah R.</text></g>
+              <g transform="translate(330,82)"><text class="pos-label" text-anchor="middle" y="-6">RF</text><text class="pos-name" text-anchor="middle" y="10">Jiayin L.</text></g>
+              <g transform="translate(138,152)"><text class="pos-label" text-anchor="middle" y="-6">SS</text><text class="pos-name" text-anchor="middle" y="10">Lane P.</text></g>
+              <g transform="translate(262,152)"><text class="pos-label" text-anchor="middle" y="-6">2B</text><text class="pos-name" text-anchor="middle" y="10">Jack B.</text></g>
+              <g transform="translate(95,215)"><text class="pos-label" text-anchor="middle" y="-6">3B</text><text class="pos-name" text-anchor="middle" y="10">Grayson P.</text></g>
+              <g transform="translate(305,215)"><text class="pos-label" text-anchor="middle" y="-6">1B</text><text class="pos-name" text-anchor="middle" y="10">Colby H.</text></g>
+              <g transform="translate(200,215)"><text class="pos-label" text-anchor="middle" y="-16">P</text><text class="pos-name pitcher" text-anchor="middle" y="8">Beau T.</text></g>
+              <g transform="translate(200,348)"><text class="pos-label" text-anchor="middle" y="-6">C</text><text class="pos-name" text-anchor="middle" y="10">Gavin G.</text></g>
+              <g transform="translate(10,295)">
+                <text class="bench-title" x="0" y="0">Bench:</text>
+                <text class="bench-name" x="0" y="16">- Cal H.</text>
+                <text class="bench-name" x="0" y="32">- Donovan C.</text>
+                <text class="bench-name" x="0" y="48">- Knox P.</text>
+                <text class="bench-name" x="0" y="64">- Silas W.</text>
+              </g>
+            </svg>
+          </div>
+        </section>
+        </div>
+
+        <!-- Inning 4 -->
+        <div class="inning-cell">
+        <div class="inning-label">Inning</div>
+        <section class="card">
+          <div class="inn-num">4</div>
+          <div class="diamond">
+            <svg viewBox="0 0 400 385" aria-hidden="true">
+              <polygon points="200,310 310,200 200,90 90,200" fill="#f3e6d4" stroke="none" />
+              <!-- Foul lines (home → beyond 3B / 1B) + outfield arc -->
+              <line x1="200" y1="310" x2="12" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <line x1="200" y1="310" x2="388" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <path d="M 12 122 C 70 -28 330 -28 388 122" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <polygon points="200,310 310,200 200,90 90,200" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <circle cx="200" cy="215" r="11" fill="#e8d5bc" stroke="#cbb89a" stroke-width="1" />
+              <g transform="translate(200,32)"><text class="pos-label" text-anchor="middle" y="-6">CF</text><text class="pos-name" text-anchor="middle" y="10">Colby H.</text></g>
+              <g transform="translate(70,82)"><text class="pos-label" text-anchor="middle" y="-6">LF</text><text class="pos-name" text-anchor="middle" y="10">Beau T.</text></g>
+              <g transform="translate(330,82)"><text class="pos-label" text-anchor="middle" y="-6">RF</text><text class="pos-name" text-anchor="middle" y="10">Jack B.</text></g>
+              <g transform="translate(138,152)"><text class="pos-label" text-anchor="middle" y="-6">SS</text><text class="pos-name" text-anchor="middle" y="10">Cal H.</text></g>
+              <g transform="translate(262,152)"><text class="pos-label" text-anchor="middle" y="-6">2B</text><text class="pos-name" text-anchor="middle" y="10">Lane P.</text></g>
+              <g transform="translate(95,215)"><text class="pos-label" text-anchor="middle" y="-6">3B</text><text class="pos-name" text-anchor="middle" y="10">Grayson P.</text></g>
+              <g transform="translate(305,215)"><text class="pos-label" text-anchor="middle" y="-6">1B</text><text class="pos-name" text-anchor="middle" y="10">Donovan C.</text></g>
+              <g transform="translate(200,215)"><text class="pos-label" text-anchor="middle" y="-16">P</text><text class="pos-name pitcher" text-anchor="middle" y="8">Knox P.</text></g>
+              <g transform="translate(200,348)"><text class="pos-label" text-anchor="middle" y="-6">C</text><text class="pos-name" text-anchor="middle" y="10">Silas W.</text></g>
+              <g transform="translate(10,295)">
+                <text class="bench-title" x="0" y="0">Bench:</text>
+                <text class="bench-name" x="0" y="16">- Elijah R.</text>
+                <text class="bench-name" x="0" y="32">- Gavin G.</text>
+                <text class="bench-name" x="0" y="48">- Jiayin L.</text>
+                <text class="bench-name" x="0" y="64">- Meer A.</text>
+              </g>
+            </svg>
+          </div>
+        </section>
+        </div>
+
+        <!-- Inning 5 -->
+        <div class="inning-cell">
+        <div class="inning-label">Inning</div>
+        <section class="card">
+          <div class="inn-num">5</div>
+          <div class="diamond">
+            <svg viewBox="0 0 400 385" aria-hidden="true">
+              <polygon points="200,310 310,200 200,90 90,200" fill="#f3e6d4" stroke="none" />
+              <!-- Foul lines (home → beyond 3B / 1B) + outfield arc -->
+              <line x1="200" y1="310" x2="12" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <line x1="200" y1="310" x2="388" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <path d="M 12 122 C 70 -28 330 -28 388 122" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <polygon points="200,310 310,200 200,90 90,200" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <circle cx="200" cy="215" r="11" fill="#e8d5bc" stroke="#cbb89a" stroke-width="1" />
+              <g transform="translate(200,32)"><text class="pos-label" text-anchor="middle" y="-6">CF</text><text class="pos-name" text-anchor="middle" y="10">Meer A.</text></g>
+              <g transform="translate(70,82)"><text class="pos-label" text-anchor="middle" y="-6">LF</text><text class="pos-name" text-anchor="middle" y="10">Jiayin L.</text></g>
+              <g transform="translate(330,82)"><text class="pos-label" text-anchor="middle" y="-6">RF</text><text class="pos-name" text-anchor="middle" y="10">Silas W.</text></g>
+              <g transform="translate(138,152)"><text class="pos-label" text-anchor="middle" y="-6">SS</text><text class="pos-name" text-anchor="middle" y="10">Grayson P.</text></g>
+              <g transform="translate(262,152)"><text class="pos-label" text-anchor="middle" y="-6">2B</text><text class="pos-name" text-anchor="middle" y="10">Elijah R.</text></g>
+              <g transform="translate(95,215)"><text class="pos-label" text-anchor="middle" y="-6">3B</text><text class="pos-name" text-anchor="middle" y="10">Knox P.</text></g>
+              <g transform="translate(305,215)"><text class="pos-label" text-anchor="middle" y="-6">1B</text><text class="pos-name" text-anchor="middle" y="10">Colby H.</text></g>
+              <g transform="translate(200,215)"><text class="pos-label" text-anchor="middle" y="-16">P</text><text class="pos-name pitcher" text-anchor="middle" y="8">Jack B.</text></g>
+              <g transform="translate(200,348)"><text class="pos-label" text-anchor="middle" y="-6">C</text><text class="pos-name" text-anchor="middle" y="10">Gavin G.</text></g>
+              <g transform="translate(10,295)">
+                <text class="bench-title" x="0" y="0">Bench:</text>
+                <text class="bench-name" x="0" y="16">- Beau T.</text>
+                <text class="bench-name" x="0" y="32">- Cal H.</text>
+                <text class="bench-name" x="0" y="48">- Donovan C.</text>
+                <text class="bench-name" x="0" y="64">- Lane P.</text>
+              </g>
+            </svg>
+          </div>
+        </section>
+        </div>
+
+        <!-- Inning 6 — blank for in-game write-in -->
+        <div class="inning-cell">
+        <div class="inning-label">Inning</div>
+        <section class="card">
+          <div class="inn-num">6</div>
+          <div class="diamond">
+            <svg viewBox="0 0 400 385" aria-hidden="true">
+              <polygon points="200,310 310,200 200,90 90,200" fill="#f3e6d4" stroke="none" />
+              <!-- Foul lines (home → beyond 3B / 1B) + outfield arc -->
+              <line x1="200" y1="310" x2="12" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <line x1="200" y1="310" x2="388" y2="122" stroke="#9a9a9a" stroke-width="1.25" />
+              <path d="M 12 122 C 70 -28 330 -28 388 122" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <polygon points="200,310 310,200 200,90 90,200" fill="none" stroke="#9a9a9a" stroke-width="1.25" />
+              <circle cx="200" cy="215" r="11" fill="#e8d5bc" stroke="#cbb89a" stroke-width="1" />
+              <g transform="translate(200,32)">
+                <text class="pos-label" text-anchor="middle" y="-6">CF</text>
+                <line class="write-line" x1="-36" y1="14" x2="36" y2="14" />
+              </g>
+              <g transform="translate(70,82)">
+                <text class="pos-label" text-anchor="middle" y="-6">LF</text>
+                <line class="write-line" x1="-36" y1="14" x2="36" y2="14" />
+              </g>
+              <g transform="translate(330,82)">
+                <text class="pos-label" text-anchor="middle" y="-6">RF</text>
+                <line class="write-line" x1="-36" y1="14" x2="36" y2="14" />
+              </g>
+              <g transform="translate(138,152)">
+                <text class="pos-label" text-anchor="middle" y="-6">SS</text>
+                <line class="write-line" x1="-36" y1="14" x2="36" y2="14" />
+              </g>
+              <g transform="translate(262,152)">
+                <text class="pos-label" text-anchor="middle" y="-6">2B</text>
+                <line class="write-line" x1="-36" y1="14" x2="36" y2="14" />
+              </g>
+              <g transform="translate(95,215)">
+                <text class="pos-label" text-anchor="middle" y="-6">3B</text>
+                <line class="write-line" x1="-36" y1="14" x2="36" y2="14" />
+              </g>
+              <g transform="translate(305,215)">
+                <text class="pos-label" text-anchor="middle" y="-6">1B</text>
+                <line class="write-line" x1="-36" y1="14" x2="36" y2="14" />
+              </g>
+              <g transform="translate(200,215)">
+                <text class="pos-label" text-anchor="middle" y="-16">P</text>
+                <line class="write-line" x1="-36" y1="12" x2="36" y2="12" />
+              </g>
+              <g transform="translate(200,348)">
+                <text class="pos-label" text-anchor="middle" y="-6">C</text>
+                <line class="write-line" x1="-36" y1="14" x2="36" y2="14" />
+              </g>
+              <g transform="translate(10,295)">
+                <text class="bench-title" x="0" y="0">Bench:</text>
+                <text class="bench-name" x="0" y="16">- ________</text>
+                <text class="bench-name" x="0" y="32">- ________</text>
+                <text class="bench-name" x="0" y="48">- ________</text>
+                <text class="bench-name" x="0" y="64">- ________</text>
+              </g>
+            </svg>
+          </div>
+        </section>
+        </div>
+      </div>
+
+      <footer>
+        <div><strong>Pitch plan:</strong> Donovan C. · Cal H. · Beau T. · Knox P. · Jack B.</div>
+        <div>Web version: ../games/game-01/diamonds.html</div>
+      </footer>
+    </article>
+  </body>
+</html>

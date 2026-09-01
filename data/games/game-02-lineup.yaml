@@ -4,15 +4,17 @@
 meta:
   game: 2
   innings: 5
-  opponent:
+  home: true
+  opponent: Mud Hens
   date: 8/29/26
-  time:
-  field:
+  time: 1pm
+  field: ACP Field 3
   notes:
-    - Saturday game; opponent / field / time left blank for write-in
+    - Home vs Mud Hens
     - Assumed all 13 available
-    - Pitchers: Lane (did not pitch G1), Donovan, Beau, Jack, Knox
-    - Cal off the mound this game after a rough G1 inning; more SS
+    - Pitch plan: Jack 1–2 · Knox 1–2 · Lane 1–2 ( sequential; 5-inning game = Jack 1–2, Knox 3–4, Lane 5 )
+    - Pencil next pitcher in the 2nd inning of each stint (Inn 2: Knox under Jack; Inn 4: Lane under Knox)
+    - If starter comes out after 1, next pitcher takes P and the outgoing pitcher takes that kid’s listed field spot
     - Hard rule: no consecutive bench innings
 
 batting_order:
@@ -20,94 +22,96 @@ batting_order:
   - Lane Packham        # 2
   - Gavin Garcia        # 3
   - Cal Helmedag        # 4 — cleanup
-  - Jiayin Li           # 5
-  - Grayson Pascal      # 6
-  - Knox Pollard        # 7
-  - Jack Beaver         # 8
-  - Beau Tyson          # 9
-  - Donovan Couture     # 10
-  - Colby Hobgood       # 11
-  - Silas Walker        # 12
+  - Donovan Couture     # 5 — moved up
+  - Silas Walker        # 6 — moved up
+  - Grayson Pascal      # 7
+  - Knox Pollard        # 8
+  - Jack Beaver         # 9
+  - Jiayin Li           # 10 — down 5 from 5
+  - Beau Tyson          # 11
+  - Colby Hobgood       # 12
   - Elijah Ragland      # 13
 
 defense:
   inning_1:
-    P: Lane Packham
+    P: Jack Beaver
+    C: Gavin Garcia
+    1B: Colby Hobgood
+    2B: Lane Packham
+    3B: Grayson Pascal
+    SS: Cal Helmedag
+    LF: Elijah Ragland
+    CF: Meer Amin
+    RF: Knox Pollard
+    bench: [Beau Tyson, Donovan Couture, Jiayin Li, Silas Walker]
+
+  inning_2:
+    P: Jack Beaver
+    P_pencil: Knox Pollard   # if Jack is done after 1, Knox takes P; Jack takes 2B
     C: Silas Walker
+    1B: Donovan Couture
+    2B: Knox Pollard
+    3B: Beau Tyson
+    SS: Lane Packham
+    LF: Grayson Pascal
+    CF: Meer Amin
+    RF: Jiayin Li
+    bench: [Cal Helmedag, Colby Hobgood, Elijah Ragland, Gavin Garcia]
+
+  inning_3:
+    P: Knox Pollard
+    C: Gavin Garcia
+    1B: Colby Hobgood
+    2B: Beau Tyson
+    3B: Grayson Pascal
+    SS: Cal Helmedag
+    LF: Elijah Ragland
+    CF: Meer Amin
+    RF: Jiayin Li
+    bench: [Donovan Couture, Jack Beaver, Lane Packham, Silas Walker]
+
+  inning_4:
+    P: Knox Pollard
+    P_pencil: Lane Packham   # if Knox is done after 1, Lane takes P; Knox takes 2B
+    C: Silas Walker
+    1B: Donovan Couture
+    2B: Lane Packham
+    3B: Beau Tyson
+    SS: Cal Helmedag
+    LF: Jack Beaver
+    CF: Colby Hobgood
+    RF: Elijah Ragland
+    bench: [Gavin Garcia, Grayson Pascal, Jiayin Li, Meer Amin]
+
+  inning_5:
+    P: Lane Packham
+    C: Gavin Garcia
     1B: Donovan Couture
     2B: Elijah Ragland
     3B: Cal Helmedag
     SS: Grayson Pascal
-    LF: Jack Beaver
+    LF: Silas Walker
     CF: Meer Amin
     RF: Jiayin Li
-    bench: [Beau Tyson, Colby Hobgood, Gavin Garcia, Knox Pollard]
-
-  inning_2:
-    P: Donovan Couture
-    C: Gavin Garcia
-    1B: Colby Hobgood
-    2B: Knox Pollard
-    3B: Beau Tyson
-    SS: Lane Packham
-    LF: Elijah Ragland
-    CF: Meer Amin
-    RF: Jack Beaver
-    bench: [Cal Helmedag, Grayson Pascal, Jiayin Li, Silas Walker]
-
-  inning_3:
-    P: Beau Tyson
-    C: Silas Walker
-    1B: Donovan Couture
-    2B: Lane Packham
-    3B: Grayson Pascal
-    SS: Cal Helmedag
-    LF: Jiayin Li
-    CF: Meer Amin
-    RF: Knox Pollard
-    bench: [Colby Hobgood, Elijah Ragland, Gavin Garcia, Jack Beaver]
-
-  inning_4:
-    P: Jack Beaver
-    C: Gavin Garcia
-    1B: Colby Hobgood
-    2B: Elijah Ragland
-    3B: Grayson Pascal
-    SS: Lane Packham
-    LF: Beau Tyson
-    CF: Knox Pollard
-    RF: Silas Walker
-    bench: [Cal Helmedag, Donovan Couture, Jiayin Li, Meer Amin]
-
-  inning_5:
-    P: Knox Pollard
-    C: Gavin Garcia
-    1B: Donovan Couture
-    2B: Grayson Pascal
-    3B: Beau Tyson
-    SS: Cal Helmedag
-    LF: Jiayin Li
-    CF: Meer Amin
-    RF: Elijah Ragland
-    bench: [Colby Hobgood, Jack Beaver, Lane Packham, Silas Walker]
+    bench: [Beau Tyson, Colby Hobgood, Jack Beaver, Knox Pollard]
 
 fairness_summary:
   hard_rule: no consecutive bench innings
-  field_innings: "2–4 each"
+  field_innings: "3–4 each"
   bench_by_player:
-    Beau: [1]
-    Cal: [2, 4]
-    Colby: [1, 3, 5]
-    Donovan: [4]
-    Elijah: [3]
-    Gavin: [1, 3]
-    Grayson: [2]
+    Beau: [1, 5]
+    Cal: [2]
+    Colby: [2, 5]
+    Donovan: [1, 3]
+    Elijah: [2]
+    Gavin: [2, 4]
+    Grayson: [4]
     Jack: [3, 5]
-    Jiayin: [2, 4]
-    Knox: [1]
-    Lane: [5]
+    Jiayin: [1, 4]
+    Knox: [5]
+    Lane: [3]
     Meer: [4]
-    Silas: [2, 5]
-  catcher_rotation: [Silas, Gavin, Silas, Gavin, Gavin]
-  ss_rotation: [Grayson, Lane, Cal, Lane, Cal]
-  pitch_plan: [Lane, Donovan, Beau, Jack, Knox]
+    Silas: [1, 3]
+  catcher_rotation: [Gavin, Silas, Gavin, Silas, Gavin]
+  ss_rotation: [Cal, Lane, Cal, Cal, Grayson]
+  pitch_plan: Jack 1–2 (Knox penciled Inn 2) · Knox 3–4 (Lane penciled Inn 4) · Lane 5

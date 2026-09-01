@@ -1,0 +1,181 @@
+/* Interactive defensive diamond */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 0 1.25rem;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--page);
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 1rem auto 0;
+  background: var(--card);
+  padding: 1rem 1.25rem 1.35rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.draft-banner {
+  margin: 0 0 0.85rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--rule);
+  background: var(--pitch-bg);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+      .draft-banner strong {
+        color: var(--storm-red);
+        font-family: var(--font-display);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        border-bottom: 2.5px solid var(--storm-red);
+        padding-bottom: 0.55rem;
+        margin-bottom: 0.75rem;
+      }
+
+      header img {
+        height: 52px;
+        width: auto;
+      }
+
+      header .titles {
+        flex: 1;
+      }
+
+      header h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      header p {
+        margin: 0.15rem 0 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .innings {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .innings button {
+        font-family: var(--font-display);
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--ink);
+        padding: 0.35rem 0.7rem;
+        cursor: pointer;
+      }
+
+      .innings button[aria-pressed="true"] {
+        border-color: var(--storm-red);
+        color: var(--storm-red);
+        box-shadow: inset 0 -2px 0 var(--storm-red);
+      }
+
+      .field-wrap {
+        border-top: 2.5px solid var(--storm-red);
+        border: 1px solid var(--line);
+        border-top: 2.5px solid var(--storm-red);
+        background: var(--grass);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .pos-label {
+        font-family: var(--font-display);
+        font-size: 9px;
+        fill: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .pos-name {
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 700;
+        fill: var(--ink);
+      }
+
+      .pos-name.pitcher {
+        fill: var(--storm-red);
+      }
+
+      .bench {
+        margin-top: 0.85rem;
+        border-top: 2.5px solid var(--storm-red);
+        border: 1px solid var(--line);
+        border-top: 2.5px solid var(--storm-red);
+        padding: 0.55rem 0.7rem;
+      }
+
+      .bench h2 {
+        margin: 0 0 0.35rem;
+        font-family: var(--font-display);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--storm-red);
+      }
+
+      .bench ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.85rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .notes {
+        margin: 0.75rem 0 0;
+        color: var(--muted);
+        font-size: 0.75rem;
+      }
+
+.field-wrap polygon[fill="#f3e6d4"] {
+  fill: var(--dirt);
+  stroke: var(--dirt-stroke);
+}
+
+.field-wrap circle {
+  fill: var(--mound);
+  stroke: var(--mound-stroke);
+}
+
+.field-wrap rect {
+  fill: var(--base);
+  stroke: var(--base-stroke);
+}
+
+.notes a {
+  color: var(--storm-red);
+}
