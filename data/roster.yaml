@@ -21,10 +21,10 @@ players:
     notes: [likely cleanup hitter]
 
   - name: Colby Hobgood
-    positions: [1B, OF]
+    positions: [OF]
     strengths: []
     weaknesses: []
-    notes: []
+    notes: [Not a 1B — OF only]
 
   - name: Donovan Couture
     positions: [P, 1B]
@@ -39,22 +39,22 @@ players:
     notes: []
 
   - name: Gavin Garcia
-    positions: [C, OF]
+    positions: [C, 1B, OF]
     strengths: [Hitting, catching]
     weaknesses: []
-    notes: []
+    notes: [Preferred 1B]
 
   - name: Grayson Pascal
-    positions: [SS, 3B, 2B]
+    positions: [SS, 3B, 2B, 1B]
     strengths: [fielding]
     weaknesses: []
     notes: []
 
   - name: Jack Beaver
-    positions: [P, OF, 3B, 2B]
+    positions: [P, 1B, OF, 3B, 2B, C]
     strengths: []
     weaknesses: []
-    notes: []
+    notes: [Preferred 1B]
 
   - name: Jiayin Li
     positions: [OF]

@@ -29,6 +29,8 @@ pitching:
 defense:
   # Positions that usually need stronger arms / experience
   priority_positions: [P, C, SS, CF]
+  # Keep a catcher in for consecutive innings (blocks of 2) rather than alternating each inning
+  consecutive_catcher_innings: true
   # OF slots when a player only lists OF (assign LF/CF/RF as needed)
   outfield_slots: [LF, CF, RF]
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Storm — Game 2 Diamond</title>
+    <title>Storm — Game 3 Diamond</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,8 +20,8 @@
       <a href="../../index.html">Home</a>
       <a href="../../scouting.html">Scouting</a>
       <a href="../../games/game-01/lineup.html">Game 1</a>
-      <a href="../../games/game-02/lineup.html" aria-current="page">Game 2</a>
-      <a href="../../games/game-03/lineup.html">Game 3</a>
+      <a href="../../games/game-02/lineup.html">Game 2</a>
+      <a href="../../games/game-03/lineup.html" aria-current="page">Game 3</a>
       <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">Dark</button>
     </nav>
     <div class="wrap">
@@ -29,13 +29,13 @@
         <img src="../../assets/storm-logo.png" alt="Storm" width="120" height="72" />
         <div class="titles">
           <h1>Defensive Diamond</h1>
-          <p>Game 2 · vs Mud Hens · 8/29/26 · ACP Field 3 · 1pm · Home</p>
+          <p>Game 3 · vs Space Cowboys · 9/16/26 · 6pm</p>
         </div>
       </header>
       <p class="notes" style="margin-top:0">
         <a href="lineup.html">Lineup</a>
         ·
-        <a href="../../print/game-02-diamonds.html">Print diamonds</a>
+        <a href="../../print/game-03-diamonds.html">Print diamonds</a>
       </p>
       <div class="innings" role="tablist" aria-label="Inning">
         <button type="button" data-inning="1" aria-pressed="true">Inn 1</button>
@@ -107,12 +107,12 @@
           <!-- 1B -->
           <g class="spot" data-pos="1B" transform="translate(305,250)">
             <text class="pos-label" text-anchor="middle" y="-10">1B</text>
-            <text class="pos-name" text-anchor="middle" y="8" data-name>Colby</text>
+            <text class="pos-name" text-anchor="middle" y="8" data-name>Jack</text>
           </g>
           <!-- P -->
           <g class="spot" data-pos="P" transform="translate(200,250)">
             <text class="pos-label" text-anchor="middle" y="-18">P</text>
-            <text class="pos-name pitcher" text-anchor="middle" y="6" data-name>Jack</text>
+            <text class="pos-name pitcher" text-anchor="middle" y="6" data-name>Donovan</text>
           </g>
           <!-- C -->
           <g class="spot" data-pos="C" transform="translate(200,400)">
@@ -125,8 +125,8 @@
       <section class="bench" aria-live="polite">
         <h2>Bench</h2>
         <ul id="bench-list">
+          <li>Colby</li>
           <li>Beau</li>
-          <li>Donovan</li>
           <li>Jiayin</li>
           <li>Silas</li>
         </ul>
@@ -137,64 +137,64 @@
     <script>
       const innings = {
         1: {
-          P: "Jack",
+          P: "Donovan",
           C: "Gavin",
-          "1B": "Colby",
+          "1B": "Jack",
           "2B": "Lane",
           "3B": "Grayson",
           SS: "Cal",
           LF: "Elijah",
           CF: "Meer",
           RF: "Knox",
-          bench: ["Beau", "Donovan", "Jiayin", "Silas"],
+          bench: ["Colby", "Beau", "Jiayin", "Silas"],
         },
         2: {
-          P: "Jack",
-          C: "Silas",
-          "1B": "Donovan",
-          "2B": "Knox",
+          P: "Donovan",
+          C: "Gavin",
+          "1B": "Jack",
+          "2B": "Grayson",
           "3B": "Beau",
           SS: "Lane",
-          LF: "Grayson",
-          CF: "Meer",
+          LF: "Colby",
+          CF: "Silas",
           RF: "Jiayin",
-          bench: ["Cal", "Colby", "Elijah", "Gavin"],
+          bench: ["Cal", "Knox", "Elijah", "Meer"],
         },
         3: {
-          P: "Knox",
-          C: "Gavin",
-          "1B": "Colby",
-          "2B": "Beau",
-          "3B": "Grayson",
+          P: "Grayson",
+          C: "Silas",
+          "1B": "Gavin",
+          "2B": "Knox",
+          "3B": "Beau",
           SS: "Cal",
           LF: "Elijah",
           CF: "Meer",
           RF: "Jiayin",
-          bench: ["Donovan", "Jack", "Lane", "Silas"],
+          bench: ["Donovan", "Colby", "Lane", "Jack"],
         },
         4: {
-          P: "Knox",
+          P: "Grayson",
           C: "Silas",
-          "1B": "Donovan",
+          "1B": "Jack",
           "2B": "Lane",
           "3B": "Beau",
           SS: "Cal",
-          LF: "Jack",
-          CF: "Colby",
-          RF: "Elijah",
-          bench: ["Gavin", "Grayson", "Jiayin", "Meer"],
+          LF: "Colby",
+          CF: "Knox",
+          RF: "Donovan",
+          bench: ["Gavin", "Meer", "Elijah", "Jiayin"],
         },
         5: {
           P: "Lane",
-          C: "Gavin",
-          "1B": "Donovan",
-          "2B": "Elijah",
-          "3B": "Cal",
-          SS: "Grayson",
-          LF: "Silas",
-          CF: "Meer",
+          C: "Jack",
+          "1B": "Gavin",
+          "2B": "Meer",
+          "3B": "Knox",
+          SS: "Cal",
+          LF: "Elijah",
+          CF: "Colby",
           RF: "Jiayin",
-          bench: ["Beau", "Colby", "Jack", "Knox"],
+          bench: ["Beau", "Grayson", "Silas", "Donovan"],
         },
       };
 

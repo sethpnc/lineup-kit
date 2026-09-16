@@ -11,6 +11,9 @@ Letter-size HTML used for paper/PDF. **Web** lineups and diamonds live under [`.
 | Game 2 lineup | [`game-02-lineup.html`](game-02-lineup.html) |
 | Game 2 diamonds (6-up) | [`game-02-diamonds.html`](game-02-diamonds.html) |
 | Game 2 scoring | [`game-02-scoring.html`](game-02-scoring.html) |
+| Game 3 lineup | [`game-03-lineup.html`](game-03-lineup.html) |
+| Game 3 diamonds (6-up) | [`game-03-diamonds.html`](game-03-diamonds.html) |
+| Game 3 scoring | [`game-03-scoring.html`](game-03-scoring.html) |
 | Team scouting (1 page) | [`team-scouting-report.html`](team-scouting-report.html) |
 
 Shared styles: [`lineup.css`](lineup.css), [`scoring-sheet.css`](scoring-sheet.css). Logo: [`../assets/storm-logo.png`](../assets/storm-logo.png) (copy of `data/storm-logo.png`).
@@ -21,7 +24,7 @@ PDFs (when generated) go in [`pdf/`](pdf/).
 
 1. **Masthead** — Storm logo + `GAME LINEUP` + game #
 2. **Game meta** — Opponent / Date / Field·Time
-3. **Left: Batting order** — first name + last initial
+3. **Left: Batting order** — first name only
 4. **Right: Defense matrix** — positions × innings 1–5; bench row
 5. **Footer** — pitch plan + standing rules
 
@@ -50,5 +53,5 @@ When the coach finalizes a lineup:
 2. Write/update **web** `games/game-XX/lineup.html` and `diamonds.html`
 3. Write/update **print** `print/game-XX-lineup.html` (and diamonds / scoring as needed)
 4. Keep opponent/date/field blank unless provided
-5. Names on every print/web sheet: **first name + last initial**. Full names in YAML / roster only.
+5. Names on lineup and diamond sheets (print and web): **first name only**. Full names in YAML / roster only.
 6. Update [`index.html`](../index.html) when adding a new game
