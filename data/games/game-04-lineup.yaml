@@ -1,0 +1,121 @@
+# Storm Baseball — Game 4 lineup plan
+# Continuous batting order (all 13). Edit freely.
+
+meta:
+  game: 4
+  innings: 5
+  opponent: River Dogs
+  date: 9/19/26
+  time: 1pm
+  field: ""
+  notes:
+    - All 13 available
+    - Pitch plan: Beau 2–4 innings · Jack 2 · Knox as needed
+    - Default 5-inning split: Beau 1–2 (Jack penciled Inn 2) · Jack 3–4 (Knox penciled Inn 4) · Knox 5
+    - If Beau stays for Inn 3: Jack 4–5 · Knox as needed · Gavin C Inn 5 (Jack pitching)
+    - Prefer pull Beau after 2 or 3 so Jack still gets 2 IP
+    - If starter comes out after 1, next pitcher takes P from the bench; outgoing pitcher takes 3B (Inn 2, Grayson sits) or 1B (Inn 4, Donovan sits)
+    - Catchers in consecutive blocks: Gavin 1–2 · Silas 3–4 · Jack 5 (if not pitching)
+    - 1B: Jack Inn 1 · Gavin Inn 3 · Donovan 2, 4, 5. Not Colby.
+    - Hard rule: no consecutive bench innings
+    - Batting shuffled for OBP: Lane 1 · Silas 2 · Knox 5 · Donovan 9
+
+batting_order:
+  - Lane Packham        # 1
+  - Silas Walker        # 2
+  - Gavin Garcia        # 3
+  - Cal Helmedag        # 4 — cleanup
+  - Knox Pollard        # 5
+  - Meer Amin           # 6
+  - Grayson Pascal      # 7
+  - Jack Beaver         # 8
+  - Donovan Couture     # 9
+  - Colby Hobgood       # 10
+  - Jiayin Li           # 11
+  - Beau Tyson          # 12
+  - Elijah Ragland      # 13
+
+defense:
+  inning_1:
+    P: Beau Tyson
+    C: Gavin Garcia
+    1B: Jack Beaver
+    2B: Lane Packham
+    3B: Grayson Pascal
+    SS: Cal Helmedag
+    LF: Elijah Ragland
+    CF: Meer Amin
+    RF: Colby Hobgood
+    bench: [Knox Pollard, Donovan Couture, Jiayin Li, Silas Walker]
+
+  inning_2:
+    P: Beau Tyson
+    P_pencil: Jack Beaver  # if Beau is done after 1, Jack takes P; Beau takes 3B (Grayson sits)
+    C: Gavin Garcia
+    1B: Donovan Couture
+    2B: Knox Pollard
+    3B: Grayson Pascal
+    SS: Lane Packham
+    LF: Colby Hobgood
+    CF: Silas Walker
+    RF: Jiayin Li
+    bench: [Cal Helmedag, Jack Beaver, Elijah Ragland, Meer Amin]
+
+  inning_3:
+    P: Jack Beaver
+    C: Silas Walker
+    1B: Gavin Garcia
+    2B: Knox Pollard
+    3B: Beau Tyson
+    SS: Cal Helmedag
+    LF: Elijah Ragland
+    CF: Meer Amin
+    RF: Grayson Pascal
+    bench: [Colby Hobgood, Donovan Couture, Lane Packham, Jiayin Li]
+
+  inning_4:
+    P: Jack Beaver
+    P_pencil: Knox Pollard  # if Jack is done after 1, Knox takes P; Jack takes 1B (Donovan sits)
+    C: Silas Walker
+    1B: Donovan Couture
+    2B: Lane Packham
+    3B: Grayson Pascal
+    SS: Cal Helmedag
+    LF: Colby Hobgood
+    CF: Elijah Ragland
+    RF: Jiayin Li
+    bench: [Gavin Garcia, Knox Pollard, Beau Tyson, Meer Amin]
+
+  inning_5:
+    P: Knox Pollard
+    C: Jack Beaver
+    1B: Donovan Couture
+    2B: Lane Packham
+    3B: Beau Tyson
+    SS: Cal Helmedag
+    LF: Gavin Garcia
+    CF: Meer Amin
+    RF: Jiayin Li
+    bench: [Silas Walker, Grayson Pascal, Colby Hobgood, Elijah Ragland]
+
+fairness_summary:
+  hard_rule: no consecutive bench innings
+  field_innings: "3–4 each"
+  bench_by_player:
+    Beau: [4]
+    Cal: [2]
+    Colby: [3, 5]
+    Donovan: [1, 3]
+    Elijah: [2, 5]
+    Gavin: [4]
+    Grayson: [5]
+    Jack: [2]
+    Jiayin: [1, 3]
+    Knox: [1, 4]
+    Lane: [3]
+    Meer: [2, 4]
+    Silas: [1, 5]
+  catcher_rotation: [Gavin, Gavin, Silas, Silas, Jack]
+  ss_rotation: [Cal, Lane, Cal, Cal, Cal]
+  first_base: Jack 1 · Gavin 3 · Donovan 2, 4, 5
+  pitch_plan: Beau 1–2 (Jack penciled Inn 2) · Jack 3–4 (Knox penciled Inn 4) · Knox 5

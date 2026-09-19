@@ -3,52 +3,53 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Storm — Game 2 Lineup</title>
+    <title>Storm Baseball — Game 4 Lineup</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../assets/css/site.css" />
-    <link rel="stylesheet" href="../../assets/css/lineup-web.css" />
-    <script src="../../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="lineup.css" />
   </head>
-  <body class="lineup-web">
-    <nav class="site-nav">
-      <a class="brand" href="../../index.html"><img src="../../assets/storm-logo.png" alt="" /> Storm</a>
-      <a href="../../index.html">Home</a>
-      <a href="../../scouting.html">Scouting</a>
-      <a href="../../games/game-01/lineup.html">Game 1</a>
-      <a href="../../games/game-02/lineup.html" aria-current="page">Game 2</a>
-      <a href="../../games/game-03/lineup.html">Game 3</a>
-      <a href="../../games/game-04/lineup.html">Game 4</a>
-      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">Dark</button>
-    </nav>
-    <div class="lineup-page">
-      <header class="masthead">
-        <img src="../../assets/storm-logo.png" alt="Storm" width="180" height="108" />
-        <div>
-          <h1>Game 2 Lineup</h1>
-          <p class="sub">13U–15U Rec · Continuous batting</p>
-        </div>
-      </header>
-            <div class="meta-row">
-        <div><span>Opponent</span>Mud Hens</div>
-        <div><span>Date</span>8/29/26</div>
-        <div><span>Field / Time</span>ACP Field 3 · 1pm · Home</div>
-      </div>
-      <p class="game-links">
-        <a href="diamonds.html">Diamond (by inning)</a>
-        ·
-        <a href="../../print/game-02-lineup.html">Print lineup</a>
-        ·
-        <a href="../../print/game-02-diamonds.html">Print diamonds</a>
-        ·
-        <a href="../../print/game-02-scoring.html">Scorecard</a>
-      </p>
-      <div class="layout">
+  <body>
+    <p class="screen-only">
+      Printable game sheet. When you’re happy with a lineup:
+      <kbd>Cmd</kbd>+<kbd>P</kbd> → PDF or printer → enable <strong>background graphics</strong>.
+    </p>
 
+    <article class="sheet">
+      <header class="masthead">
+        <img
+          class="logo"
+          src="../assets/storm-logo.png"
+          alt="Storm"
+          width="200"
+          height="120"
+        />
+        <div class="masthead-text">
+          <div class="doc-title">Game Lineup</div>
+          <div class="doc-sub">13U–15U Rec · Continuous batting</div>
+        </div>
+        <div class="game-badge"><span>Game</span>4</div>
+      </header>
+
+      <section class="game-meta" aria-label="Game info">
+        <div class="meta-field">
+          <label>Opponent</label>
+          <div class="value">River Dogs</div>
+        </div>
+        <div class="meta-field">
+          <label>Date</label>
+          <div class="value">9/19/26</div>
+        </div>
+        <div class="meta-field">
+          <label>Field / Time</label>
+          <div class="value">1pm</div>
+        </div>
+      </section>
+
+      <div class="layout">
         <section class="bat-panel" aria-labelledby="bat-title">
           <h2 id="bat-title" class="panel-title">Batting Order</h2>
           <p class="panel-note">All 13 · continuous</p>
@@ -60,18 +61,18 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="top-hitters"><td class="num">1</td><td class="name">Meer</td></tr>
-              <tr class="top-hitters"><td class="num">2</td><td class="name">Lane</td></tr>
+              <tr class="top-hitters"><td class="num">1</td><td class="name">Lane</td></tr>
+              <tr class="top-hitters"><td class="num">2</td><td class="name">Silas</td></tr>
               <tr class="top-hitters"><td class="num">3</td><td class="name">Gavin</td></tr>
               <tr class="top-hitters"><td class="num">4</td><td class="name">Cal</td></tr>
-              <tr class="top-hitters"><td class="num">5</td><td class="name">Donovan</td></tr>
-              <tr class="top-hitters"><td class="num">6</td><td class="name">Silas</td></tr>
+              <tr class="top-hitters"><td class="num">5</td><td class="name">Knox</td></tr>
+              <tr class="top-hitters"><td class="num">6</td><td class="name">Meer</td></tr>
               <tr class="top-hitters"><td class="num">7</td><td class="name">Grayson</td></tr>
-              <tr class="top-hitters"><td class="num">8</td><td class="name">Knox</td></tr>
-              <tr class="top-hitters"><td class="num">9</td><td class="name">Jack</td></tr>
-              <tr><td class="num">10</td><td class="name">Jiayin</td></tr>
-              <tr><td class="num">11</td><td class="name">Beau</td></tr>
-              <tr><td class="num">12</td><td class="name">Colby</td></tr>
+              <tr class="top-hitters"><td class="num">8</td><td class="name">Jack</td></tr>
+              <tr class="top-hitters"><td class="num">9</td><td class="name">Donovan</td></tr>
+              <tr><td class="num">10</td><td class="name">Colby</td></tr>
+              <tr><td class="num">11</td><td class="name">Jiayin</td></tr>
+              <tr><td class="num">12</td><td class="name">Beau</td></tr>
               <tr><td class="num">13</td><td class="name">Elijah</td></tr>
             </tbody>
           </table>
@@ -97,25 +98,25 @@
             <tbody>
               <tr class="pitch-row">
                 <th scope="row" class="pos">P</th>
+                <td class="player">Beau</td>
+                <td class="player dual">Beau<span class="relief">Jack</span></td>
                 <td class="player">Jack</td>
                 <td class="player dual">Jack<span class="relief">Knox</span></td>
                 <td class="player">Knox</td>
-                <td class="player dual">Knox<span class="relief">Lane</span></td>
-                <td class="player">Lane</td>
               </tr>
               <tr>
                 <th scope="row" class="pos">C</th>
                 <td class="player">Gavin</td>
-                <td class="player">Silas</td>
                 <td class="player">Gavin</td>
                 <td class="player">Silas</td>
-                <td class="player">Gavin</td>
+                <td class="player">Silas</td>
+                <td class="player">Jack</td>
               </tr>
               <tr>
                 <th scope="row" class="pos">1B</th>
-                <td class="player">Colby</td>
+                <td class="player">Jack</td>
                 <td class="player">Donovan</td>
-                <td class="player">Colby</td>
+                <td class="player">Gavin</td>
                 <td class="player">Donovan</td>
                 <td class="player">Donovan</td>
               </tr>
@@ -123,17 +124,17 @@
                 <th scope="row" class="pos">2B</th>
                 <td class="player">Lane</td>
                 <td class="player">Knox</td>
-                <td class="player">Beau</td>
+                <td class="player">Knox</td>
                 <td class="player">Lane</td>
-                <td class="player">Elijah</td>
+                <td class="player">Lane</td>
               </tr>
               <tr>
                 <th scope="row" class="pos">3B</th>
                 <td class="player">Grayson</td>
+                <td class="player">Grayson</td>
                 <td class="player">Beau</td>
                 <td class="player">Grayson</td>
                 <td class="player">Beau</td>
-                <td class="player">Cal</td>
               </tr>
               <tr>
                 <th scope="row" class="pos">SS</th>
@@ -141,39 +142,39 @@
                 <td class="player">Lane</td>
                 <td class="player">Cal</td>
                 <td class="player">Cal</td>
-                <td class="player">Grayson</td>
+                <td class="player">Cal</td>
               </tr>
               <tr>
                 <th scope="row" class="pos">LF</th>
                 <td class="player">Elijah</td>
-                <td class="player">Grayson</td>
+                <td class="player">Colby</td>
                 <td class="player">Elijah</td>
-                <td class="player">Jack</td>
-                <td class="player">Silas</td>
+                <td class="player">Colby</td>
+                <td class="player">Gavin</td>
               </tr>
               <tr>
                 <th scope="row" class="pos">CF</th>
                 <td class="player">Meer</td>
+                <td class="player">Silas</td>
                 <td class="player">Meer</td>
-                <td class="player">Meer</td>
-                <td class="player">Colby</td>
+                <td class="player">Elijah</td>
                 <td class="player">Meer</td>
               </tr>
               <tr>
                 <th scope="row" class="pos">RF</th>
-                <td class="player">Knox</td>
+                <td class="player">Colby</td>
                 <td class="player">Jiayin</td>
+                <td class="player">Grayson</td>
                 <td class="player">Jiayin</td>
-                <td class="player">Elijah</td>
                 <td class="player">Jiayin</td>
               </tr>
               <tr class="bench-row">
                 <th scope="row" class="pos">Bench</th>
-                <td>Beau<br />Donovan<br />Jiayin<br />Silas</td>
-                <td>Cal<br />Colby<br />Elijah<br />Gavin</td>
-                <td>Donovan<br />Jack<br />Lane<br />Silas</td>
-                <td>Gavin<br />Grayson<br />Jiayin<br />Meer</td>
-                <td>Beau<br />Colby<br />Jack<br />Knox</td>
+                <td>Knox<br />Donovan<br />Jiayin<br />Silas</td>
+                <td>Cal<br />Jack<br />Elijah<br />Meer</td>
+                <td>Colby<br />Donovan<br />Lane<br />Jiayin</td>
+                <td>Gavin<br />Knox<br />Beau<br />Meer</td>
+                <td>Silas<br />Grayson<br />Colby<br />Elijah</td>
               </tr>
             </tbody>
           </table>
@@ -183,17 +184,17 @@
         </section>
       </div>
 
-      <div class="foot">
+      <footer class="footer">
         <div>
-          <strong>Pitch plan:</strong> Jack 1–2 · Knox 1–2 · Lane 1–2
+          <strong>Pitch plan:</strong> Beau 1–2 · Jack 1–2 · Knox as needed
           <span class="hint">
-            Italic name = penciled relief in that pitcher’s 2nd inning. If the starter is done after 1, relief takes P; outgoing pitcher takes the relief’s field spot (Inn 2: 2B; Inn 4: 2B).
+            Italic name = penciled relief in that pitcher’s 2nd inning. If the starter is done after 1, relief takes P; outgoing pitcher takes 3B (Inn 2) or 1B (Inn 4). Beau may stay for Inn 3 (then Jack 4–5, Gavin C Inn 5). Catchers: Gavin 1–2 · Silas 3–4 · Jack 5. 1B is Jack / Gavin / Donovan — not Colby.
           </span>
         </div>
         <div>
-          <strong>Rules:</strong> Continuous batting · no consecutive sits · home
+          <strong>Rules:</strong> Continuous batting · no consecutive sits
         </div>
-      </div>
-    </div>
+      </footer>
+    </article>
   </body>
 </html>
