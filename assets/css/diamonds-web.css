@@ -72,6 +72,23 @@ body {
         font-size: 0.82rem;
       }
 
+      header .score {
+        margin: 0.2rem 0 0;
+        font-family: var(--font-display);
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      header .score.win {
+        color: var(--tier-top-edge);
+      }
+
+      header .score.loss {
+        color: var(--tier-low-edge);
+      }
+
       .innings {
         display: flex;
         flex-wrap: wrap;

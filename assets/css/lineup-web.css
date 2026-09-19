@@ -52,7 +52,7 @@ body.lineup-web {
 
 .meta-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
   margin-bottom: 0.85rem;
 }
@@ -71,6 +71,31 @@ body.lineup-web {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted, #5a5a5a);
+  font-weight: 500;
+}
+
+.meta-row .final {
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+.meta-row .final.win span,
+.meta-row .final.loss span {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.meta-row .final.win {
+  background: var(--tier-top-bg);
+  border-color: var(--tier-top-edge);
+  color: var(--tier-top-edge);
+}
+
+.meta-row .final.loss {
+  background: var(--tier-low-bg);
+  border-color: var(--tier-low-edge);
+  color: var(--tier-low-edge);
 }
 
 .layout {

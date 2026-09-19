@@ -8,6 +8,8 @@ meta:
   date: 8/22/26
   time: 9am
   field: ACP Field 3
+  result: W
+  score: "5-3"
   notes:
     - Assumed "Jackson" = Jack Beaver
     - All 13 bat in continuous order
