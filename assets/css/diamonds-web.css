@@ -18,6 +18,7 @@ body {
   background: var(--card);
   padding: 1rem 1.25rem 1.35rem;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius);
 }
 
 .draft-banner {
@@ -27,6 +28,7 @@ body {
   background: var(--pitch-bg);
   color: var(--muted);
   font-size: 0.78rem;
+  border-radius: var(--radius-sm);
 }
 
       .draft-banner strong {
@@ -87,6 +89,7 @@ body {
         color: var(--ink);
         padding: 0.35rem 0.7rem;
         cursor: pointer;
+        border-radius: var(--radius-sm);
       }
 
       .innings button[aria-pressed="true"] {
@@ -100,6 +103,8 @@ body {
         border: 1px solid var(--line);
         border-top: 2.5px solid var(--storm-red);
         background: var(--grass);
+        border-radius: var(--radius);
+        overflow: hidden;
       }
 
       svg {
@@ -133,6 +138,7 @@ body {
         border: 1px solid var(--line);
         border-top: 2.5px solid var(--storm-red);
         padding: 0.55rem 0.7rem;
+        border-radius: var(--radius);
       }
 
       .bench h2 {

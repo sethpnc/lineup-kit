@@ -24,6 +24,14 @@ html[data-theme="light"] {
   --base-stroke: #666;
   --font-display: "Oswald", "Arial Narrow", sans-serif;
   --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --tier-top-bg: #eaf6ec;
+  --tier-top-edge: #2f8a46;
+  --tier-mid-bg: #fff6d8;
+  --tier-mid-edge: #d4a017;
+  --tier-low-bg: #fdecee;
+  --tier-low-edge: #c8102e;
 }
 
 html[data-theme="dark"] {
@@ -47,6 +55,12 @@ html[data-theme="dark"] {
   --bench-bg: #2a2a2a;
   --base: #ececec;
   --base-stroke: #999;
+  --tier-top-bg: #1a2c1e;
+  --tier-top-edge: #5cb86a;
+  --tier-mid-bg: #2c2716;
+  --tier-mid-edge: #e0b56a;
+  --tier-low-bg: #2c1619;
+  --tier-low-edge: #e23b4d;
 }
 
 html {
@@ -106,6 +120,7 @@ html {
   border: 1px solid var(--rule);
   padding: 0.32rem 0.7rem;
   cursor: pointer;
+  border-radius: 999px;
 }
 
 .theme-toggle:hover,
