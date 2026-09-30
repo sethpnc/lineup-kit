@@ -17,6 +17,9 @@ Letter-size HTML used for paper/PDF. **Web** lineups and diamonds live under [`.
 | Game 4 lineup | [`game-04-lineup.html`](game-04-lineup.html) |
 | Game 4 diamonds (6-up) | [`game-04-diamonds.html`](game-04-diamonds.html) |
 | Game 4 scoring | [`game-04-scoring.html`](game-04-scoring.html) |
+| Game 5 lineup | [`game-05-lineup.html`](game-05-lineup.html) |
+| Game 5 diamonds (6-up) | [`game-05-diamonds.html`](game-05-diamonds.html) |
+| Game 5 scoring | [`game-05-scoring.html`](game-05-scoring.html) |
 | Team scouting (1 page) | [`team-scouting-report.html`](team-scouting-report.html) |
 
 Shared styles: [`lineup.css`](lineup.css), [`scoring-sheet.css`](scoring-sheet.css). Logo: [`../assets/storm-logo.png`](../assets/storm-logo.png) (copy of `data/storm-logo.png`).
