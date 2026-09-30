@@ -16,7 +16,7 @@ players:
 
   - name: Cal Helmedag
     positions: [P, SS, OF, 3B, 1B, 2B]
-    strengths: []
+    strengths: [hitting, fielding]
     weaknesses: []
     notes: [likely cleanup hitter]
 
@@ -28,13 +28,13 @@ players:
 
   - name: Donovan Couture
     positions: [P, 1B]
-    strengths: [Pitching, hitting]
+    strengths: [Pitching, hitting, fielding]
     weaknesses: []
     notes: []
 
   - name: Elijah Ragland
     positions: [OF, 2B]
-    strengths: [fielding]
+    strengths: []
     weaknesses: [hitting]
     notes: []
 
@@ -45,20 +45,20 @@ players:
     notes: [Preferred 1B]
 
   - name: Grayson Pascal
-    positions: [SS, 3B, 2B, 1B]
+    positions: [SS, 3B, 2B, 1B, OF]
     strengths: [fielding]
     weaknesses: []
     notes: []
 
   - name: Jack Beaver
-    positions: [P, 1B, OF, 3B, 2B, C]
-    strengths: []
+    positions: [1B, CP, 1B, OF, 2B]
+    strengths: [Fielding]
     weaknesses: []
     notes: [Preferred 1B]
 
   - name: Jiayin Li
     positions: [OF]
-    strengths: [Hitting]
+    strengths: []
     weaknesses: [throwing, fielding]
     notes: []
 
@@ -69,7 +69,7 @@ players:
     notes: []
 
   - name: Lane Packham
-    positions: [SS, 2B, C, P]
+    positions: [SS, 2B, P]
     strengths: [Fielding, Hitting]
     weaknesses: []
     notes: [Good leadoff hitter]
@@ -82,6 +82,6 @@ players:
 
   - name: Silas Walker
     positions: [C, OF]
-    strengths: [Catching]
+    strengths: []
     weaknesses: []
     notes: []

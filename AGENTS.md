@@ -51,6 +51,8 @@ Keep catchers in for consecutive innings (typically a 2-inning block) rather tha
 
 **Hard rule:** no player may sit two consecutive innings.
 
+**Fairness:** try not to sit anyone twice before every available player has sat once. Prefer sitting players only once if fielding is a strength.
+
 ## Printable lineup (when coach is happy)
 
 When the coach finalizes a lineup (e.g. “make the printable”, “I’m happy with this”):
