@@ -348,16 +348,10 @@
         border-top-color: var(--tier-top-edge);
       }
 
-      .profile.tier-mid {
-        background: var(--tier-mid-bg);
-        border-color: var(--tier-mid-edge);
-        border-top-color: var(--tier-mid-edge);
-      }
-
-      .profile.tier-low {
-        background: var(--tier-low-bg);
-        border-color: var(--tier-low-edge);
-        border-top-color: var(--tier-low-edge);
+      .profile.tier-rest {
+        background: var(--tier-rest-bg);
+        border-color: var(--tier-rest-edge);
+        border-top-color: var(--tier-rest-edge);
       }
 
       .profile-head {
@@ -380,12 +374,8 @@
         color: var(--tier-top-edge);
       }
 
-      .profile.tier-mid h3 {
-        color: var(--tier-mid-edge);
-      }
-
-      .profile.tier-low h3 {
-        color: var(--tier-low-edge);
+      .profile.tier-rest h3 {
+        color: var(--tier-rest-edge);
       }
 
       .profile-role {

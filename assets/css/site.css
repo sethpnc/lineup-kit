@@ -28,6 +28,8 @@ html[data-theme="light"] {
   --radius-sm: 10px;
   --tier-top-bg: #eaf6ec;
   --tier-top-edge: #2f8a46;
+  --tier-rest-bg: #fff8e6;
+  --tier-rest-edge: #c9a227;
   --tier-mid-bg: #fff6d8;
   --tier-mid-edge: #d4a017;
   --tier-low-bg: #fdecee;
@@ -57,6 +59,8 @@ html[data-theme="dark"] {
   --base-stroke: #999;
   --tier-top-bg: #1a2c1e;
   --tier-top-edge: #5cb86a;
+  --tier-rest-bg: #2a2518;
+  --tier-rest-edge: #d4b05a;
   --tier-mid-bg: #2c2716;
   --tier-mid-edge: #e0b56a;
   --tier-low-bg: #2c1619;
