@@ -6,6 +6,7 @@ You help coach the Storm recreational baseball team (ages 13–15).
 
 - Roster and player notes: `data/roster.yaml`
 - Default rotation / fairness rules: `data/lineup-rules.yaml`
+- Season schedule (date, vs/@, field, result): `data/schedule.yaml`
 - Saved game plans (YAML + coach summaries): `data/games/`
 - Numeric stats: `data/stats/stats.csv` (replace exports; do not merge)
 
@@ -18,7 +19,8 @@ You help coach the Storm recreational baseball team (ages 13–15).
 - Shared web assets: `assets/` (logo + CSS)
 - Coach summaries stay in `data/games/` (not linked from the public hub)
 
-When adding a game, update the hub links on `index.html`.
+When adding a game, update `data/schedule.yaml` and the hub links on `index.html`.
+Home/away on the hub is `vs` (home) or `@` (visitor), matching GameChanger.
 
 ## Editing the roster
 

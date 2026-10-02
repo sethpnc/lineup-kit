@@ -66,6 +66,13 @@
         color: var(--ink);
       }
 
+      .hero .scouting-link {
+        display: inline-block;
+        margin-top: 0.45rem;
+        color: var(--storm-red);
+        font-size: 0.9rem;
+      }
+
       h2 {
         margin: 0 0 0.65rem;
         font-family: var(--font-display);
@@ -75,47 +82,184 @@
         color: var(--storm-red);
       }
 
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-        gap: 0.85rem;
-        margin-bottom: 1.25rem;
-      }
-
-      .card {
+      .schedule {
+        width: 100%;
+        border-collapse: collapse;
         background: var(--card);
         border: 1px solid var(--rule);
         border-top: 3px solid var(--storm-red);
         border-radius: var(--radius);
-        padding: 0.85rem 1rem 1rem;
+        overflow: hidden;
       }
 
-      .card h3 {
-        margin: 0 0 0.2rem;
+      .schedule th,
+      .schedule td {
+        text-align: left;
+        vertical-align: middle;
+        padding: 0.7rem 0.85rem;
+      }
+
+      .schedule th {
         font-family: var(--font-display);
-        letter-spacing: 0.08em;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--muted);
+        background: var(--tint);
+        border-bottom: 1px solid var(--rule);
       }
 
-      .card .meta {
-        margin: 0 0 0.65rem;
-        font-size: 0.85rem;
+      .schedule tbody tr + tr td {
+        border-top: 1px solid var(--rule);
+      }
+
+      .schedule .when {
+        width: 9.5rem;
+        font-size: 0.88rem;
+        line-height: 1.3;
+        font-weight: 400;
+        letter-spacing: 0;
+        text-transform: none;
+        color: var(--ink);
+      }
+
+      .schedule th.when,
+      .schedule th.opp {
+        font-family: var(--font-display);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 500;
         color: var(--muted);
       }
 
-      .card ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+      .when .game-num {
+        display: block;
+        font-size: 0.72rem;
+        color: var(--muted);
+        letter-spacing: 0.04em;
       }
 
-      .card li {
-        margin: 0.28rem 0;
+      .opp {
+        font-family: var(--font-display);
+        font-size: 1.12rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
-      .card a {
+      .opp .ha {
+        display: inline-block;
+        min-width: 1.35rem;
+        margin-right: 0.25rem;
+        font-family: var(--font-body);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0;
+        text-transform: none;
+        color: var(--muted);
+      }
+
+      .schedule .result {
+        width: 6.5rem;
+        white-space: nowrap;
+        padding-left: 0;
+        padding-right: 0.85rem;
+      }
+
+      .schedule th.result {
+        letter-spacing: 0.08em;
+      }
+
+      .score {
+        display: inline-block;
+        font-family: var(--font-display);
+        letter-spacing: 0.04em;
+        font-weight: 700;
+        font-size: 1.05rem;
+      }
+
+      .score.win {
+        color: var(--tier-top-edge);
+      }
+
+      .score.loss {
+        color: var(--tier-low-edge);
+      }
+
+      .result .empty {
+        color: var(--muted);
+      }
+
+      .links {
+        font-size: 0.88rem;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .schedule th.links {
+        text-align: right;
+      }
+
+      .links a {
         color: var(--storm-red);
+      }
+
+      @media (max-width: 640px) {
+        .schedule thead {
+          display: none;
+        }
+
+        .schedule,
+        .schedule tbody,
+        .schedule tr,
+        .schedule td {
+          display: block;
+          width: auto;
+        }
+
+        .schedule tr {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          grid-template-areas:
+            "when result"
+            "opp result"
+            "links links";
+          padding: 0.7rem 1rem;
+        }
+
+        .schedule tbody tr + tr {
+          border-top: 1px solid var(--rule);
+        }
+
+        .schedule tbody tr + tr td {
+          border-top: none;
+        }
+
+        .schedule td {
+          padding: 0;
+        }
+
+        .when {
+          grid-area: when;
+        }
+
+        .opp {
+          grid-area: opp;
+        }
+
+        .schedule .result {
+          grid-area: result;
+          width: auto;
+          text-align: right;
+          padding: 0;
+        }
+
+        .links {
+          grid-area: links;
+          text-align: left;
+          margin-top: 0.35rem;
+        }
       }
     </style>
     <script src="assets/js/theme.js"></script>
@@ -141,64 +285,116 @@
         <div>
           <h1>Storm Baseball</h1>
           <p>13U–15U Rec · Lineups, diamonds, and team scouting</p>
-          <p class="season">Season 2–2 · 26–17</p>
+          <p class="season">Season 2–3 · 30–29</p>
+          <a class="scouting-link" href="scouting.html">Scouting report</a>
         </div>
       </header>
 
-      <h2>Team</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Scouting report</h3>
-          <p class="meta">Season hitting &amp; pitching · sortable tables</p>
-          <ul>
-            <li><a href="scouting.html">Open web report</a></li>
-          </ul>
-        </article>
-      </div>
-
-      <h2>Games</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Game 1</h3>
-          <p class="meta">vs Hooks · 8/22/26 · ACP Field 3 · 9am<br /><strong>W 5–3</strong></p>
-          <ul>
-            <li><a href="games/game-01/lineup.html">Lineup</a></li>
-            <li><a href="games/game-01/diamonds.html">Diamond (by inning)</a></li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Game 2</h3>
-          <p class="meta">vs Mud Hens · 8/29/26 · ACP Field 3 · 1pm · Home<br /><strong>L 2–6</strong></p>
-          <ul>
-            <li><a href="games/game-02/lineup.html">Lineup</a></li>
-            <li><a href="games/game-02/diamonds.html">Diamond (by inning)</a></li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Game 3</h3>
-          <p class="meta">vs Space Cowboys · 9/16/26 · 6pm<br /><strong>L 0–3</strong></p>
-          <ul>
-            <li><a href="games/game-03/lineup.html">Lineup</a></li>
-            <li><a href="games/game-03/diamonds.html">Diamond (by inning)</a></li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Game 4</h3>
-          <p class="meta">vs River Dogs · 9/19/26 · 1pm<br /><strong>W 19–5</strong></p>
-          <ul>
-            <li><a href="games/game-04/lineup.html">Lineup</a></li>
-            <li><a href="games/game-04/diamonds.html">Diamond (by inning)</a></li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Game 5</h3>
-          <p class="meta">vs Trash Pandas · 9/30/26 · 6pm</p>
-          <ul>
-            <li><a href="games/game-05/lineup.html">Lineup</a></li>
-            <li><a href="games/game-05/diamonds.html">Diamond (by inning)</a></li>
-          </ul>
-        </article>
-      </div>
+      <h2>Schedule</h2>
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th class="when" scope="col">When</th>
+            <th class="opp" scope="col">Opponent</th>
+            <th class="result" scope="col">Result</th>
+            <th class="links" scope="col">Sheets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="when">
+              <span class="game-num">Game 1</span>
+              8/22/26 · 9am
+            </td>
+            <td class="opp"><span class="ha">@</span> Hooks</td>
+            <td class="result"><span class="score win">W 5–3</span></td>
+            <td class="links">
+              <a href="games/game-01/lineup.html">Lineup</a>
+              ·
+              <a href="games/game-01/diamonds.html">Diamond</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="when">
+              <span class="game-num">Game 2</span>
+              8/29/26 · 1pm
+            </td>
+            <td class="opp"><span class="ha">vs</span> Mud Hens</td>
+            <td class="result"><span class="score loss">L 2–6</span></td>
+            <td class="links">
+              <a href="games/game-02/lineup.html">Lineup</a>
+              ·
+              <a href="games/game-02/diamonds.html">Diamond</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="when">
+              <span class="game-num">Game 3</span>
+              9/16/26 · 6pm
+            </td>
+            <td class="opp"><span class="ha">@</span> Space Cowboys</td>
+            <td class="result"><span class="score loss">L 0–3</span></td>
+            <td class="links">
+              <a href="games/game-03/lineup.html">Lineup</a>
+              ·
+              <a href="games/game-03/diamonds.html">Diamond</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="when">
+              <span class="game-num">Game 4</span>
+              9/19/26 · 1pm
+            </td>
+            <td class="opp"><span class="ha">@</span> River Dogs</td>
+            <td class="result"><span class="score win">W 19–5</span></td>
+            <td class="links">
+              <a href="games/game-04/lineup.html">Lineup</a>
+              ·
+              <a href="games/game-04/diamonds.html">Diamond</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="when">
+              <span class="game-num">Game 5</span>
+              9/30/26 · 7:45pm
+            </td>
+            <td class="opp"><span class="ha">vs</span> Trash Pandas</td>
+            <td class="result"><span class="score loss">L 4–12</span></td>
+            <td class="links">
+              <a href="games/game-05/lineup.html">Lineup</a>
+              ·
+              <a href="games/game-05/diamonds.html">Diamond</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="when">
+              <span class="game-num">Game 6</span>
+              10/3/26 · 1pm
+            </td>
+            <td class="opp"><span class="ha">@</span> Mud Hens</td>
+            <td class="result"><span class="empty">—</span></td>
+            <td class="links"></td>
+          </tr>
+          <tr>
+            <td class="when">
+              <span class="game-num">Game 7</span>
+              10/7/26 · 6pm
+            </td>
+            <td class="opp"><span class="ha">vs</span> Hooks</td>
+            <td class="result"><span class="empty">—</span></td>
+            <td class="links"></td>
+          </tr>
+          <tr>
+            <td class="when">
+              <span class="game-num">Game 8</span>
+              10/10/26 · 9am
+            </td>
+            <td class="opp"><span class="ha">vs</span> Timber Rattlers</td>
+            <td class="result"><span class="empty">—</span></td>
+            <td class="links"></td>
+          </tr>
+        </tbody>
+      </table>
     </main>
   </body>
 </html>
