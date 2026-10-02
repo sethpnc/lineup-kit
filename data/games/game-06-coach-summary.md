@@ -6,7 +6,7 @@
 **1B:** Donovan 1–4 · Gavin 5  
 **Rules check:** continuous batting (11 available — Cal and Colby out) · no consecutive sits · no second sits · fielding-strength sit once · Meer 3B Inn 1–2
 
-If Jack is done after Inn 2: Knox pitches Inn 3, Jack catches, Silas moves to CF.  
+If Jack is done after Inn 2: Knox pitches Inn 3, Jack catches, Elijah moves to 2B, Silas goes to CF.  
 If Knox struggles in Inn 4: Grayson comes off the bench and pitches 4–5.
 
 Ten kids sit once; Jack plays all 5 (P 1–3, C 4–5).
@@ -32,9 +32,9 @@ Ten kids sit once; Jack plays all 5 (P 1–3, C 4–5).
 | 1 | Lane Packham | 2B | SS | bench | SS | SS | 1 (3) |
 | 2 | Silas Walker | C | C | C | bench | LF | 1 (4) |
 | 3 | Gavin Garcia | LF | bench | LF | LF | 1B | 1 (2) |
-| 4 | Knox Pollard | CF | CF | CF | P | bench | 1 (5) |
+| 4 | Knox Pollard | CF | CF | 2B | P | bench | 1 (5) |
 | 5 | Meer Amin | 3B | 3B | bench | CF | CF | 1 (3) |
-| 6 | Elijah Ragland | bench | LF | 2B | 2B | 2B | 1 (1) |
+| 6 | Elijah Ragland | bench | LF | CF | 2B | 2B | 1 (1) |
 | 7 | Grayson Pascal | SS | 2B | SS | bench | P | 1 (4) |
 | 8 | Beau Tyson | bench | RF | 3B | 3B | 3B | 1 (1) |
 | 9 | Jack Beaver | P | P | P | C | C | 0 |

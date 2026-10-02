@@ -13,7 +13,7 @@ meta:
     - Unavailable: Cal, Colby (11 available, 2 sit each inning)
     - Pitch plan: Jack 2–3 innings · Knox in relief · then Grayson
     - Default 5-inning split: Jack 1–3 (Knox penciled Inn 3) · Knox 4 (Grayson penciled from the bench) · Grayson 5
-    - If Jack is done after 2: Knox pitches Inn 3, Jack catches, Silas moves to CF
+    - If Jack is done after 2: Knox pitches Inn 3, Jack catches, Elijah moves to 2B, Silas goes to CF
     - If Knox struggles in Inn 4: Grayson comes off the bench and pitches 4–5
     - Catchers: Silas 1–3 (catches for Jack) · Jack 4–5 (catches when not pitching)
     - 1B: Donovan 1–4 · Gavin 5
@@ -62,14 +62,14 @@ defense:
 
   inning_3:
     P: Jack Beaver
-    P_pencil: Knox Pollard  # if Jack is done after 2: Knox P, Jack C, Silas CF
+    P_pencil: Knox Pollard  # if Jack is done after 2: Knox P, Jack C, Elijah 2B, Silas CF
     C: Silas Walker
     1B: Donovan Couture
-    2B: Elijah Ragland
+    2B: Knox Pollard
     3B: Beau Tyson
     SS: Grayson Pascal
     LF: Gavin Garcia
-    CF: Knox Pollard
+    CF: Elijah Ragland
     RF: Jiayin Li
     bench: [Lane Packham, Meer Amin]
 
