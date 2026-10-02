@@ -64,6 +64,7 @@ games:
     home: false
     opponent: Mud Hens
     field: ACP Field 3
+    slug: game-06
 
   - id: 7
     date: 10/7/26
