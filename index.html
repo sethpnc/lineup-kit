@@ -20,9 +20,16 @@
       }
 
       .home {
-        max-width: 1080px;
+        max-width: 1180px;
         margin: 0 auto;
         padding: 1.25rem 1.1rem 2rem;
+      }
+
+      .body-grid {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 1.1rem;
+        align-items: start;
       }
 
       .hero {
@@ -85,11 +92,6 @@
       .schedule {
         width: 100%;
         border-collapse: collapse;
-        background: var(--card);
-        border: 1px solid var(--rule);
-        border-top: 3px solid var(--storm-red);
-        border-radius: var(--radius);
-        overflow: hidden;
       }
 
       .schedule th,
@@ -137,8 +139,12 @@
       .when .game-num {
         display: block;
         font-size: 0.72rem;
-        color: var(--muted);
         letter-spacing: 0.04em;
+        color: var(--muted);
+      }
+
+      .when .game-num a {
+        color: var(--storm-red);
       }
 
       .opp {
@@ -160,49 +166,159 @@
         color: var(--muted);
       }
 
-      .schedule .result {
-        width: 6.5rem;
+      .schedule .wl,
+      .schedule .runs {
         white-space: nowrap;
-        padding-left: 0;
-        padding-right: 0.85rem;
-      }
-
-      .schedule th.result {
-        letter-spacing: 0.08em;
-      }
-
-      .score {
-        display: inline-block;
         font-family: var(--font-display);
-        letter-spacing: 0.04em;
         font-weight: 700;
+        letter-spacing: 0.04em;
         font-size: 1.05rem;
       }
 
-      .score.win {
-        color: var(--tier-top-edge);
+      .schedule .wl {
+        width: 2.1rem;
+        padding-right: 0.35rem;
       }
 
-      .score.loss {
-        color: var(--tier-low-edge);
+      .schedule .runs {
+        padding-left: 0.15rem;
       }
 
-      .result .empty {
+      .schedule th.wl,
+      .schedule th.runs {
+        font-family: var(--font-display);
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 500;
         color: var(--muted);
       }
 
-      .links {
-        font-size: 0.88rem;
-        white-space: nowrap;
+      .wl.win,
+      .runs.win {
+        color: var(--tier-top-edge);
+      }
+
+      .wl.loss,
+      .runs.loss {
+        color: var(--tier-low-edge);
+      }
+
+      .wl.empty,
+      .runs.empty {
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .col-side {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+
+      .side-box {
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-top: 3px solid var(--storm-red);
+        border-radius: var(--radius);
+        padding: 0.75rem 0.95rem 0.9rem;
+      }
+
+      .side-box h2 {
+        margin: 0 0 0.15rem;
+      }
+
+      .side-box .thru {
+        margin: 0 0 0.55rem;
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+
+      .side-box h3 {
+        margin: 0.55rem 0 0.15rem;
+        font-family: var(--font-display);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 0.28rem;
+      }
+
+      .side-box h3:first-of-type {
+        margin-top: 0.15rem;
+      }
+
+      .ldr {
+        display: grid;
+        grid-template-columns: 2.7rem 1fr auto;
+        gap: 0.4rem 0.55rem;
+        align-items: baseline;
+        padding: 0.42rem 0;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .ldr:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .ldr .cat {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .ldr .name {
+        font-weight: 600;
+        font-size: 0.92rem;
+      }
+
+      .ldr .val {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.05rem;
+        letter-spacing: 0.03em;
         text-align: right;
       }
 
-      .schedule th.links {
-        text-align: right;
+      .stat-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.55rem 0.75rem;
+        padding: 0.45rem 0 0.15rem;
       }
 
-      .links a {
+      .tstat .lbl {
+        display: block;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .tstat .val {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.28rem;
+        letter-spacing: 0.03em;
+        line-height: 1.15;
+      }
+
+      .side-box .more {
+        display: inline-block;
+        margin-top: 0.55rem;
+        font-size: 0.85rem;
         color: var(--storm-red);
+      }
+
+      @media (max-width: 900px) {
+        .body-grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 640px) {
@@ -220,12 +336,12 @@
 
         .schedule tr {
           display: grid;
-          grid-template-columns: 1fr auto;
+          grid-template-columns: 1fr auto auto;
           grid-template-areas:
-            "when result"
-            "opp result"
-            "links links";
+            "when wl runs"
+            "opp wl runs";
           padding: 0.7rem 1rem;
+          column-gap: 0.55rem;
         }
 
         .schedule tbody tr + tr {
@@ -248,17 +364,17 @@
           grid-area: opp;
         }
 
-        .schedule .result {
-          grid-area: result;
+        .schedule .wl {
+          grid-area: wl;
           width: auto;
           text-align: right;
           padding: 0;
         }
 
-        .links {
-          grid-area: links;
-          text-align: left;
-          margin-top: 0.35rem;
+        .schedule .runs {
+          grid-area: runs;
+          text-align: right;
+          padding: 0;
         }
       }
     </style>
@@ -290,81 +406,63 @@
         </div>
       </header>
 
+      <div class="body-grid">
+      <section class="col-main side-box">
       <h2>Schedule</h2>
       <table class="schedule">
         <thead>
           <tr>
             <th class="when" scope="col">When</th>
             <th class="opp" scope="col">Opponent</th>
-            <th class="result" scope="col">Result</th>
-            <th class="links" scope="col">Sheets</th>
+            <th class="wl" scope="col">W/L</th>
+            <th class="runs" scope="col">Score</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="when">
-              <span class="game-num">Game 1</span>
+              <span class="game-num"><a href="games/game-01/lineup.html">Game 1</a></span>
               8/22/26 · 9am
             </td>
             <td class="opp"><span class="ha">@</span> Hooks</td>
-            <td class="result"><span class="score win">W 5–3</span></td>
-            <td class="links">
-              <a href="games/game-01/lineup.html">Lineup</a>
-              ·
-              <a href="games/game-01/diamonds.html">Diamond</a>
-            </td>
+            <td class="wl win">W</td>
+            <td class="runs win">5–3</td>
           </tr>
           <tr>
             <td class="when">
-              <span class="game-num">Game 2</span>
+              <span class="game-num"><a href="games/game-02/lineup.html">Game 2</a></span>
               8/29/26 · 1pm
             </td>
             <td class="opp"><span class="ha">vs</span> Mud Hens</td>
-            <td class="result"><span class="score loss">L 2–6</span></td>
-            <td class="links">
-              <a href="games/game-02/lineup.html">Lineup</a>
-              ·
-              <a href="games/game-02/diamonds.html">Diamond</a>
-            </td>
+            <td class="wl loss">L</td>
+            <td class="runs loss">2–6</td>
           </tr>
           <tr>
             <td class="when">
-              <span class="game-num">Game 3</span>
+              <span class="game-num"><a href="games/game-03/lineup.html">Game 3</a></span>
               9/16/26 · 6pm
             </td>
             <td class="opp"><span class="ha">@</span> Space Cowboys</td>
-            <td class="result"><span class="score loss">L 0–3</span></td>
-            <td class="links">
-              <a href="games/game-03/lineup.html">Lineup</a>
-              ·
-              <a href="games/game-03/diamonds.html">Diamond</a>
-            </td>
+            <td class="wl loss">L</td>
+            <td class="runs loss">0–3</td>
           </tr>
           <tr>
             <td class="when">
-              <span class="game-num">Game 4</span>
+              <span class="game-num"><a href="games/game-04/lineup.html">Game 4</a></span>
               9/19/26 · 1pm
             </td>
             <td class="opp"><span class="ha">@</span> River Dogs</td>
-            <td class="result"><span class="score win">W 19–5</span></td>
-            <td class="links">
-              <a href="games/game-04/lineup.html">Lineup</a>
-              ·
-              <a href="games/game-04/diamonds.html">Diamond</a>
-            </td>
+            <td class="wl win">W</td>
+            <td class="runs win">19–5</td>
           </tr>
           <tr>
             <td class="when">
-              <span class="game-num">Game 5</span>
+              <span class="game-num"><a href="games/game-05/lineup.html">Game 5</a></span>
               9/30/26 · 7:45pm
             </td>
             <td class="opp"><span class="ha">vs</span> Trash Pandas</td>
-            <td class="result"><span class="score loss">L 4–12</span></td>
-            <td class="links">
-              <a href="games/game-05/lineup.html">Lineup</a>
-              ·
-              <a href="games/game-05/diamonds.html">Diamond</a>
-            </td>
+            <td class="wl loss">L</td>
+            <td class="runs loss">4–12</td>
           </tr>
           <tr>
             <td class="when">
@@ -372,8 +470,8 @@
               10/3/26 · 1pm
             </td>
             <td class="opp"><span class="ha">@</span> Mud Hens</td>
-            <td class="result"><span class="empty">—</span></td>
-            <td class="links"></td>
+            <td class="wl empty">—</td>
+            <td class="runs empty">—</td>
           </tr>
           <tr>
             <td class="when">
@@ -381,8 +479,8 @@
               10/7/26 · 6pm
             </td>
             <td class="opp"><span class="ha">vs</span> Hooks</td>
-            <td class="result"><span class="empty">—</span></td>
-            <td class="links"></td>
+            <td class="wl empty">—</td>
+            <td class="runs empty">—</td>
           </tr>
           <tr>
             <td class="when">
@@ -390,11 +488,51 @@
               10/10/26 · 9am
             </td>
             <td class="opp"><span class="ha">vs</span> Timber Rattlers</td>
-            <td class="result"><span class="empty">—</span></td>
-            <td class="links"></td>
+            <td class="wl empty">—</td>
+            <td class="runs empty">—</td>
           </tr>
         </tbody>
       </table>
+      </section>
+
+      <aside class="col-side">
+        <section class="side-box" aria-labelledby="leaders-title">
+          <h2 id="leaders-title">Team Leaders</h2>
+          <p class="thru">Through Game 5</p>
+          <h3>Batting</h3>
+          <div class="ldr"><span class="cat">AVG</span><span class="name">Lane</span><span class="val">.667</span></div>
+          <div class="ldr"><span class="cat">OPS</span><span class="name">Cal</span><span class="val">1.545</span></div>
+          <div class="ldr"><span class="cat">RBI</span><span class="name">Cal</span><span class="val">6</span></div>
+          <div class="ldr"><span class="cat">SB</span><span class="name">Lane</span><span class="val">8</span></div>
+          <h3>Pitching</h3>
+          <div class="ldr"><span class="cat">ERA</span><span class="name">Donovan</span><span class="val">6.00</span></div>
+          <div class="ldr"><span class="cat">WHIP</span><span class="name">Donovan</span><span class="val">1.57</span></div>
+          <div class="ldr"><span class="cat">SO</span><span class="name">Donovan</span><span class="val">9</span></div>
+          <div class="ldr"><span class="cat">W</span><span class="name">Beau</span><span class="val">1</span></div>
+          <a class="more" href="scouting.html">Full statistics</a>
+        </section>
+
+        <section class="side-box" aria-labelledby="tstats-title">
+          <h2 id="tstats-title">Team Stats</h2>
+          <p class="thru">Through Game 5</p>
+          <h3>Batting</h3>
+          <div class="stat-grid">
+            <div class="tstat"><span class="lbl">AVG</span><span class="val">.264</span></div>
+            <div class="tstat"><span class="lbl">OBP</span><span class="val">.480</span></div>
+            <div class="tstat"><span class="lbl">OPS</span><span class="val">.836</span></div>
+            <div class="tstat"><span class="lbl">R</span><span class="val">30</span></div>
+          </div>
+          <h3>Pitching</h3>
+          <div class="stat-grid">
+            <div class="tstat"><span class="lbl">ERA</span><span class="val">8.53</span></div>
+            <div class="tstat"><span class="lbl">WHIP</span><span class="val">2.34</span></div>
+            <div class="tstat"><span class="lbl">K</span><span class="val">25</span></div>
+            <div class="tstat"><span class="lbl">W-L</span><span class="val">2–3</span></div>
+          </div>
+          <a class="more" href="scouting.html">Full statistics</a>
+        </section>
+      </aside>
+      </div>
     </main>
   </body>
 </html>
