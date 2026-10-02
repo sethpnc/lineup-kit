@@ -1,0 +1,80 @@
+# Storm Baseball — season schedule (source of truth for the hub)
+# Games only. Snapshot from GameChanger ICS (vs/@, date, time, field).
+# Scores and lineup slugs are local — the ICS has no results.
+# Do not store the calendar token in this repo (public GitHub Pages).
+
+season: Fall 2026
+record: 2-3
+runs: 30-29
+
+games:
+  - id: 1
+    date: 8/22/26
+    time: 9am
+    home: false
+    opponent: Hooks
+    field: Field 3
+    result: W
+    score: "5-3"
+    slug: game-01
+
+  - id: 2
+    date: 8/29/26
+    time: 1pm
+    home: true
+    opponent: Mud Hens
+    field: ACP Field 3
+    result: L
+    score: "2-6"
+    slug: game-02
+
+  - id: 3
+    date: 9/16/26
+    time: 6pm
+    home: false
+    opponent: Space Cowboys
+    field: ACP Field 3
+    result: L
+    score: "0-3"
+    slug: game-03
+
+  - id: 4
+    date: 9/19/26
+    time: 1pm
+    home: false
+    opponent: River Dogs
+    field: ACP Field 3
+    result: W
+    score: "19-5"
+    slug: game-04
+
+  - id: 5
+    date: 9/30/26
+    time: 7:45pm
+    home: true
+    opponent: Trash Pandas
+    field: ACP Field 3
+    result: L
+    score: "4-12"
+    slug: game-05
+
+  - id: 6
+    date: 10/3/26
+    time: 1pm
+    home: false
+    opponent: Mud Hens
+    field: ACP Field 3
+
+  - id: 7
+    date: 10/7/26
+    time: 6pm
+    home: true
+    opponent: Hooks
+    field: ACP Field 3
+
+  - id: 8
+    date: 10/10/26
+    time: 9am
+    home: true
+    opponent: Timber Rattlers
+    field: ""

@@ -8,6 +8,7 @@ meta:
   date: 9/16/26
   time: 6pm
   field: ""
+  home: false
   result: L
   score: "0-3"
   notes:

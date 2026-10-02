@@ -6,8 +6,11 @@ meta:
   innings: 5
   opponent: Trash Pandas
   date: 9/30/26
-  time: 6pm
-  field: ""
+  time: 7:45pm
+  field: ACP Field 3
+  home: true
+  result: L
+  score: "4-12"
   notes:
     - Assumed all 13 available
     - Pitch plan: Donovan 3+ innings · then Beau · Grayson or Cal if trouble or extra innings
