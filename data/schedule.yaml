@@ -5,8 +5,8 @@
 # Game numbers follow date order; renumber when a game is rescheduled.
 
 season: Fall 2026
-record: 2-3
-runs: 30-29
+record: 2-4
+runs: 31-35
 
 games:
   - id: 1
@@ -65,6 +65,8 @@ games:
     home: true
     opponent: Hooks
     field: ACP Field 3
+    result: L
+    score: "1-6"
     slug: game-06
 
   - id: 7
