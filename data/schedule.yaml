@@ -75,6 +75,7 @@ games:
     home: true
     opponent: Timber Rattlers
     field: ""
+    slug: game-07
 
   - id: 8
     date: 10/13/26

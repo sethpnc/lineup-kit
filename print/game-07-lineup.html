@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Storm Baseball — Game 7 Lineup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="lineup.css" />
+  </head>
+  <body>
+    <p class="screen-only">
+      Printable game sheet. When you’re happy with a lineup:
+      <kbd>Cmd</kbd>+<kbd>P</kbd> → PDF or printer → enable <strong>background graphics</strong>.
+    </p>
+
+    <article class="sheet">
+      <header class="masthead">
+        <img
+          class="logo"
+          src="../assets/storm-logo.png"
+          alt="Storm"
+          width="200"
+          height="120"
+        />
+        <div class="masthead-text">
+          <div class="doc-title">Game Lineup</div>
+          <div class="doc-sub">13U–15U Rec · Continuous batting</div>
+        </div>
+        <div class="game-badge"><span>Game</span>7</div>
+      </header>
+
+      <section class="game-meta" aria-label="Game info">
+        <div class="meta-field">
+          <label>Opponent</label>
+          <div class="value">vs Timber Rattlers</div>
+        </div>
+        <div class="meta-field">
+          <label>Date</label>
+          <div class="value">10/10/26</div>
+        </div>
+        <div class="meta-field">
+          <label>Field / Time</label>
+          <div class="value">9am</div>
+        </div>
+      </section>
+
+      <div class="layout">
+        <section class="bat-panel" aria-labelledby="bat-title">
+          <h2 id="bat-title" class="panel-title">Batting Order</h2>
+          <p class="panel-note">All 12 · continuous</p>
+          <table class="bat-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="top-hitters"><td class="num">1</td><td class="name">Lane</td></tr>
+              <tr class="top-hitters"><td class="num">2</td><td class="name">Gavin</td></tr>
+              <tr class="top-hitters"><td class="num">3</td><td class="name">Cal</td></tr>
+              <tr class="top-hitters"><td class="num">4</td><td class="name">Knox</td></tr>
+              <tr class="top-hitters"><td class="num">5</td><td class="name">Donovan</td></tr>
+              <tr class="top-hitters"><td class="num">6</td><td class="name">Silas</td></tr>
+              <tr class="top-hitters"><td class="num">7</td><td class="name">Elijah</td></tr>
+              <tr class="top-hitters"><td class="num">8</td><td class="name">Meer</td></tr>
+              <tr class="top-hitters"><td class="num">9</td><td class="name">Beau</td></tr>
+              <tr><td class="num">10</td><td class="name">Grayson</td></tr>
+              <tr><td class="num">11</td><td class="name">Colby</td></tr>
+              <tr><td class="num">12</td><td class="name">Jiayin</td></tr>
+            </tbody>
+          </table>
+          <p class="wrap-note">After #12, wraps to #1 for the whole game.</p>
+        </section>
+
+        <section class="defense-panel" aria-labelledby="def-title">
+          <h2 id="def-title" class="panel-title">Defense by Inning</h2>
+          <p class="panel-note">
+            First name only · 3 sit each inning · no back-to-back sits · no second sit until all have sat once
+          </p>
+          <table class="def-table">
+            <thead>
+              <tr>
+                <th scope="col" class="pos">Pos</th>
+                <th scope="col">Inn 1</th>
+                <th scope="col">Inn 2</th>
+                <th scope="col">Inn 3</th>
+                <th scope="col">Inn 4</th>
+                <th scope="col">Inn 5</th>
+                <th scope="col">Inn 6</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pitch-row">
+                <th scope="row" class="pos">P</th>
+                <td class="player">Grayson</td>
+                <td class="player">Grayson</td>
+                <td class="player">Beau</td>
+                <td class="player">Beau</td>
+                <td class="player">Donovan</td>
+                <td class="player">Donovan</td>
+              </tr>
+              <tr>
+                <th scope="row" class="pos">C</th>
+                <td class="player">Gavin</td>
+                <td class="player">Gavin</td>
+                <td class="player">Silas</td>
+                <td class="player">Silas</td>
+                <td class="player">Gavin</td>
+                <td class="player">Gavin</td>
+              </tr>
+              <tr>
+                <th scope="row" class="pos">1B</th>
+                <td class="player">Donovan</td>
+                <td class="player">Donovan</td>
+                <td class="player">Gavin</td>
+                <td class="player">Donovan</td>
+                <td class="player">Grayson</td>
+                <td class="player">Grayson</td>
+              </tr>
+              <tr>
+                <th scope="row" class="pos">2B</th>
+                <td class="player">Lane</td>
+                <td class="player">Elijah</td>
+                <td class="player">Lane</td>
+                <td class="player">Lane</td>
+                <td class="player">Lane</td>
+                <td class="player">Lane</td>
+              </tr>
+              <tr>
+                <th scope="row" class="pos">3B</th>
+                <td class="player">Beau</td>
+                <td class="player">Meer</td>
+                <td class="player">Knox</td>
+                <td class="player">Meer</td>
+                <td class="player">Beau</td>
+                <td class="player">Meer</td>
+              </tr>
+              <tr>
+                <th scope="row" class="pos">SS</th>
+                <td class="player">Cal</td>
+                <td class="player">Cal</td>
+                <td class="player">Cal</td>
+                <td class="player">Grayson</td>
+                <td class="player">Cal</td>
+                <td class="player">Cal</td>
+              </tr>
+              <tr>
+                <th scope="row" class="pos">LF</th>
+                <td class="player">Elijah</td>
+                <td class="player">Silas</td>
+                <td class="player">Colby</td>
+                <td class="player">Elijah</td>
+                <td class="player">Colby</td>
+                <td class="player">Silas</td>
+              </tr>
+              <tr>
+                <th scope="row" class="pos">CF</th>
+                <td class="player">Knox</td>
+                <td class="player">Knox</td>
+                <td class="player">Meer</td>
+                <td class="player">Colby</td>
+                <td class="player">Knox</td>
+                <td class="player">Elijah</td>
+              </tr>
+              <tr>
+                <th scope="row" class="pos">RF</th>
+                <td class="player">Jiayin</td>
+                <td class="player">Colby</td>
+                <td class="player">Jiayin</td>
+                <td class="player">Jiayin</td>
+                <td class="player">Jiayin</td>
+                <td class="player">Colby</td>
+              </tr>
+              <tr class="bench-row">
+                <th scope="row" class="pos">Bench</th>
+                <td>Silas<br />Meer<br />Colby</td>
+                <td>Beau<br />Jiayin<br />Lane</td>
+                <td>Grayson<br />Elijah<br />Donovan</td>
+                <td>Gavin<br />Cal<br />Knox</td>
+                <td>Silas<br />Meer<br />Elijah</td>
+                <td>Knox<br />Beau<br />Jiayin</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="legend" aria-hidden="true">
+            <span class="bench">Bench that inning</span>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <div>
+          <strong>Pitch plan:</strong> Grayson 1–2 · Beau 3–4 · Donovan 5–6 · Knox relief
+          <span class="hint">
+            Six-inning plan. Knox is the relief arm if anyone struggles or for extra innings. Catchers: Gavin 1–2 · Silas 3–4 · Gavin 5–6. 1B: Donovan when he isn’t pitching or sitting, Gavin Inn 3, Grayson 5–6. Meer plays 3B Inn 2, 4, and 6. Lane and Cal never sit the same inning. Six sit once (Cal, Colby, Donovan, Gavin, Grayson, Lane); second sits only in Inn 5–6. Jack out.
+          </span>
+        </div>
+        <div>
+          <strong>Rules:</strong> Continuous batting · no consecutive sits · no second sit until all have sat once · fielding-strength sit once
+        </div>
+      </footer>
+    </article>
+  </body>
+</html>

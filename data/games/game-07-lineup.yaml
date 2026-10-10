@@ -1,0 +1,130 @@
+# Storm Baseball — Game 7 lineup plan
+# Continuous batting order (all 12). Edit freely.
+
+meta:
+  game: 7
+  innings: 6
+  opponent: Timber Rattlers
+  date: 10/10/26
+  time: 9am
+  field: ""
+  home: true
+  notes:
+    - Jack unavailable; 12 available, 3 sit each inning
+    - Six-inning plan (coach request)
+    - Pitch plan: Grayson 1–2 · Beau 3–4 · Donovan 5–6 · Knox relief / extra innings
+    - Catchers in consecutive blocks: Gavin 1–2 · Silas 3–4 · Gavin 5–6
+    - 1B: Donovan when not pitching or sitting · Gavin Inn 3 · Grayson 5–6
+    - Meer plays 3B Inn 2, 4, and 6
+    - Lane and Cal never sit the same inning
+    - Hard rule: no consecutive bench innings
+    - Fairness: every first sit in Inn 1–4; second sits only in Inn 5–6
+    - Fairness: fielding-strength players sit once (Cal, Donovan, Grayson, Lane)
+    - Batting order: Game 6 order with Jack removed, then Donovan to 5th and Silas to 6th
+
+batting_order:
+  - Lane Packham        # 1
+  - Gavin Garcia        # 2
+  - Cal Helmedag        # 3
+  - Knox Pollard        # 4
+  - Donovan Couture     # 5
+  - Silas Walker        # 6
+  - Elijah Ragland      # 7
+  - Meer Amin           # 8
+  - Beau Tyson          # 9
+  - Grayson Pascal      # 10
+  - Colby Hobgood       # 11
+  - Jiayin Li           # 12
+
+defense:
+  inning_1:
+    P: Grayson Pascal
+    C: Gavin Garcia
+    1B: Donovan Couture
+    2B: Lane Packham
+    3B: Beau Tyson
+    SS: Cal Helmedag
+    LF: Elijah Ragland
+    CF: Knox Pollard
+    RF: Jiayin Li
+    bench: [Silas Walker, Meer Amin, Colby Hobgood]
+
+  inning_2:
+    P: Grayson Pascal
+    C: Gavin Garcia
+    1B: Donovan Couture
+    2B: Elijah Ragland
+    3B: Meer Amin
+    SS: Cal Helmedag
+    LF: Silas Walker
+    CF: Knox Pollard
+    RF: Colby Hobgood
+    bench: [Beau Tyson, Jiayin Li, Lane Packham]
+
+  inning_3:
+    P: Beau Tyson
+    C: Silas Walker
+    1B: Gavin Garcia
+    2B: Lane Packham
+    3B: Knox Pollard
+    SS: Cal Helmedag
+    LF: Colby Hobgood
+    CF: Meer Amin
+    RF: Jiayin Li
+    bench: [Grayson Pascal, Elijah Ragland, Donovan Couture]
+
+  inning_4:
+    P: Beau Tyson
+    C: Silas Walker
+    1B: Donovan Couture
+    2B: Lane Packham
+    3B: Meer Amin
+    SS: Grayson Pascal
+    LF: Elijah Ragland
+    CF: Colby Hobgood
+    RF: Jiayin Li
+    bench: [Gavin Garcia, Cal Helmedag, Knox Pollard]
+
+  inning_5:
+    P: Donovan Couture
+    C: Gavin Garcia
+    1B: Grayson Pascal
+    2B: Lane Packham
+    3B: Beau Tyson
+    SS: Cal Helmedag
+    LF: Colby Hobgood
+    CF: Knox Pollard
+    RF: Jiayin Li
+    bench: [Silas Walker, Meer Amin, Elijah Ragland]
+
+  inning_6:
+    P: Donovan Couture
+    C: Gavin Garcia
+    1B: Grayson Pascal
+    2B: Lane Packham
+    3B: Meer Amin
+    SS: Cal Helmedag
+    LF: Silas Walker
+    CF: Elijah Ragland
+    RF: Colby Hobgood
+    bench: [Knox Pollard, Beau Tyson, Jiayin Li]
+
+fairness_summary:
+  hard_rule: no consecutive bench innings
+  no_second_sit_before_all_have_sat: "All 12 first sits in Inn 1–4; second sits in Inn 5–6"
+  bench_by_player:
+    Beau: [2, 6]
+    Cal: [4]
+    Colby: [1]
+    Donovan: [3]
+    Elijah: [3, 5]
+    Gavin: [4]
+    Grayson: [3]
+    Jiayin: [2, 6]
+    Knox: [4, 6]
+    Lane: [2]
+    Meer: [1, 5]
+    Silas: [1, 5]
+  catcher_rotation: [Gavin, Gavin, Silas, Silas, Gavin, Gavin]
+  third_base: [Beau, Meer, Knox, Meer, Beau, Meer]
+  pitch_plan: Grayson 1–2 · Beau 3–4 · Donovan 5–6 · Knox relief
