@@ -70,24 +70,25 @@ games:
     slug: game-06
 
   - id: 7
-    date: 10/10/26
-    time: 9am
-    home: true
-    opponent: Timber Rattlers
-    field: ""
-    slug: game-07
-
-  - id: 8
     date: 10/13/26
     time: 7:45pm
     home: false
     opponent: Mud Hens
     field: ACP Field 3
-    note: Rained out 10/3; rescheduled. Lineup to be rebuilt.
+    note: Rained out 10/3; rescheduled.
+    slug: game-07
+
+  - id: 8
+    date: 10/17/26
+    time: 11am
+    home: true
+    opponent: Timber Rattlers
+    field: Apex Community Park
+    note: Moved from 10/10. Lineup to be rebuilt.
 
   - id: 9
-    date: 10/17/26
-    time: TBD
+    date: 10/20/26
+    time: 6pm
     home: false
     opponent: TBD
     field: Apex Community Park
@@ -97,7 +98,7 @@ games:
     time: TBD
     home: false
     opponent: TBD
-    field: Apex Community Park
+    field: ""
 
   - id: 11
     date: 10/24/26
@@ -105,3 +106,10 @@ games:
     home: false
     opponent: TBD
     field: ""
+
+  - id: 12
+    date: 10/28/26
+    time: 6pm
+    home: false
+    opponent: TBD
+    field: Apex Community Park
