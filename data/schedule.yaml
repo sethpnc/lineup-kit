@@ -76,6 +76,7 @@ games:
     opponent: Mud Hens
     field: ACP Field 3
     note: Rained out 10/3; rescheduled.
+    slug: game-07
 
   - id: 8
     date: 10/17/26
