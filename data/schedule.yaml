@@ -86,32 +86,29 @@ games:
     home: true
     opponent: Timber Rattlers
     field: Apex Community Park
-    note: Moved from 10/10. Lineup to be rebuilt.
+    result: cancelled
+    note: Rained out 10/17; cancelled permanently. Not rescheduled.
 
   - id: 9
     date: 10/20/26
     time: 6pm
-    home: false
-    opponent: TBD
+    home: true
+    opponent: Hooks
     field: Apex Community Park
+    note: End-of-season tournament Round 1 · Storm 4 seed vs Hooks 5 seed
 
   - id: 10
-    date: 10/21/26
-    time: TBD
+    date: 10/24/26
+    time: 11am
     home: false
-    opponent: TBD
-    field: ""
+    opponent: Trash Pandas
+    field: Apex Community Park
+    note: End-of-season tournament Round 2 if we advance · Trash Pandas 1 seed (home)
 
   - id: 11
-    date: 10/24/26
-    time: TBD
-    home: false
-    opponent: TBD
-    field: ""
-
-  - id: 12
     date: 10/28/26
-    time: 6pm
-    home: false
+    time: TBD
+    home: true
     opponent: TBD
     field: Apex Community Park
+    note: End-of-season tournament Round 3 if we advance
