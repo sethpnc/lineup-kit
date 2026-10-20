@@ -180,15 +180,21 @@ th {
   font-weight: 600;
 }
 
-.bat-table td.name,
-.bat-table td.num {
+.bat-table td.name {
   text-align: left;
 }
 
-.bat-table td.num {
+.bat-table td.num,
+.bat-table td.jersey {
   width: 2rem;
   font-variant-numeric: tabular-nums;
+  text-align: center;
   color: var(--muted, #5a5a5a);
+}
+
+.bat-table td.jersey {
+  font-weight: 700;
+  color: var(--ink, #0a0a0a);
 }
 
 .def-table th.pos,

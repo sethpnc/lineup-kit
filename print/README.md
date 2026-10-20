@@ -30,8 +30,8 @@ PDFs (when generated) go in [`pdf/`](pdf/).
 
 1. **Masthead** — Storm logo + `GAME LINEUP` + game #
 2. **Game meta** — Opponent / Date / Field·Time
-3. **Left: Batting order** — first name only
-4. **Right: Defense matrix** — positions × innings 1–5; bench row
+3. **Left: Batting order** — order #, jersey No., first name
+4. **Right: Defense matrix** — positions × innings; first name only; bench row
 5. **Footer** — pitch plan + standing rules
 
 ## Visual system
@@ -59,5 +59,5 @@ When the coach finalizes a lineup:
 2. Write/update **web** `games/game-XX/lineup.html` and `diamonds.html`
 3. Write/update **print** `print/game-XX-lineup.html` (and diamonds / scoring as needed)
 4. Keep opponent/date/field blank unless provided
-5. Names on lineup and diamond sheets (print and web): **first name only**. Full names in YAML / roster only.
+5. Batting order: order #, jersey **No.** (from `data/roster.yaml`), first name. Defense / diamonds: **first name only**. Full names in YAML / roster only.
 6. Update [`index.html`](../index.html) when adding a new game

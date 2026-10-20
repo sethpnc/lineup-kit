@@ -24,6 +24,7 @@ Home/away on the hub is `vs` (home) or `@` (visitor), matching GameChanger.
 
 ## Editing the roster
 
+- `number` is the jersey number (shown as **No.** on batting-order strips).
 - `positions` is an ordered preference list (first = highest priority).
 - Reorder, add, or remove positions anytime.
 - `CF` means prefer center field specifically; bare `OF` means any outfield (LF/CF/RF).
@@ -64,7 +65,7 @@ When the coach finalizes a lineup (e.g. “make the printable”, “I’m happy
 3. Write/update print `print/game-XX-lineup.html` using `print/README.md` and `print/lineup.css`
 4. Optionally `print/game-XX-diamonds.html` and scoring sheet
 5. Keep opponent / date / field blank unless provided
-6. Defense grid uses **first name only** (e.g. `Lane`) in **large cells** (write-in friendly); batting order is a **left vertical strip** with the same short form — never last initials or full last names on print or web lineup/diamond sheets
+6. Defense grid uses **first name only** (e.g. `Lane`) in **large cells** (write-in friendly). Batting order is a **left vertical strip**: order #, jersey **No.** from the roster, first name — never last initials or full last names on print or web lineup/diamond sheets
 7. Include Storm logo (`assets/storm-logo.png`), red+black accents (**no solid red/black header fills**), light pitch/bench tints only, and standing rules in the footer
 8. Print layout: masthead → meta → **batting left + defense right** → footer
 9. Add the game to [`index.html`](index.html)

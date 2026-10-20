@@ -1,5 +1,6 @@
 # Team roster — edit freely.
 # positions: ordered by preference (first = highest priority).
+# number: jersey number (from GameChanger / coach card).
 # Add strengths, weaknesses, and notes as observations accumulate.
 # Numeric stats live in data/stats/stats.csv (not here).
 
@@ -9,78 +10,91 @@ team:
 
 players:
   - name: Beau Tyson
+    number: 5
     positions: [P, 3B, OF]
     strengths: []
     weaknesses: [hitting, Fielding]
     notes: []
 
   - name: Cal Helmedag
+    number: 12
     positions: [P, SS, OF, 3B, 1B, 2B]
     strengths: [hitting, fielding]
     weaknesses: []
     notes: [likely cleanup hitter]
 
   - name: Colby Hobgood
+    number: 6
     positions: [OF]
     strengths: []
     weaknesses: []
     notes: [Not a 1B — OF only]
 
   - name: Donovan Couture
+    number: 13
     positions: [P, 1B]
     strengths: [Pitching, hitting, fielding]
     weaknesses: []
     notes: []
 
   - name: Elijah Ragland
+    number: 10
     positions: [OF, 2B]
     strengths: []
     weaknesses: [hitting]
     notes: []
 
   - name: Gavin Garcia
+    number: 11
     positions: [C, 1B, OF]
     strengths: [Hitting, catching]
     weaknesses: []
     notes: [Preferred 1B]
 
   - name: Grayson Pascal
+    number: 3
     positions: [SS, 3B, 2B, 1B, OF]
     strengths: [fielding]
     weaknesses: []
     notes: []
 
   - name: Jack Beaver
+    number: 4
     positions: [1B, CP, 1B, OF, 2B]
     strengths: [Fielding]
     weaknesses: []
     notes: [Preferred 1B]
 
   - name: Jiayin Li
+    number: 16
     positions: [OF]
     strengths: []
     weaknesses: [throwing, fielding]
     notes: []
 
   - name: Knox Pollard
+    number: 8
     positions: [OF, 2B, 3B, SS]
     strengths: []
     weaknesses: []
     notes: []
 
   - name: Lane Packham
+    number: 1
     positions: [SS, 2B, P]
     strengths: [Fielding, Hitting]
     weaknesses: []
     notes: [Good leadoff hitter]
 
   - name: Meer Amin
+    number: 2
     positions: [CF, 3B, 2B]
     strengths: [Hitting for power]
     weaknesses: []
     notes: []
 
   - name: Silas Walker
+    number: 7
     positions: [C, OF]
     strengths: []
     weaknesses: []
