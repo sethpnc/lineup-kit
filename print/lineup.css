@@ -243,6 +243,16 @@ body {
   background: #fff;
 }
 
+.bat-table .jersey {
+  width: 1.15rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-align: center;
+  color: var(--ink);
+  background: #fff;
+}
+
 .bat-table .name {
   font-weight: 600;
   font-size: 0.92rem;
