@@ -96,6 +96,7 @@ games:
     opponent: Hooks
     field: Apex Community Park
     note: End-of-season tournament Round 1 · Storm 4 seed vs Hooks 5 seed
+    slug: game-09
 
   - id: 10
     date: 10/24/26
