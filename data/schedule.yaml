@@ -99,21 +99,3 @@ games:
     result: L
     score: "3-11"
     slug: game-09
-
-  - id: 10
-    date: 10/24/26
-    time: 11am
-    home: false
-    opponent: Trash Pandas
-    field: Apex Community Park
-    result: cancelled
-    note: Tournament Round 2 — did not play (eliminated in R1)
-
-  - id: 11
-    date: 10/28/26
-    time: TBD
-    home: true
-    opponent: TBD
-    field: Apex Community Park
-    result: cancelled
-    note: Tournament Round 3 — did not play (eliminated in R1)
