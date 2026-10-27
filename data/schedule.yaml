@@ -5,8 +5,8 @@
 # Game numbers follow date order; renumber when a game is rescheduled.
 
 season: Fall 2026
-record: 3-4
-runs: 40-41
+record: 3-5
+runs: 43-52
 
 games:
   - id: 1
@@ -96,6 +96,8 @@ games:
     opponent: Hooks
     field: Apex Community Park
     note: End-of-season tournament Round 1 · Storm 4 seed vs Hooks 5 seed
+    result: L
+    score: "3-11"
     slug: game-09
 
   - id: 10
@@ -104,7 +106,8 @@ games:
     home: false
     opponent: Trash Pandas
     field: Apex Community Park
-    note: End-of-season tournament Round 2 if we advance · Trash Pandas 1 seed (home)
+    result: cancelled
+    note: Tournament Round 2 — did not play (eliminated in R1)
 
   - id: 11
     date: 10/28/26
@@ -112,4 +115,5 @@ games:
     home: true
     opponent: TBD
     field: Apex Community Park
-    note: End-of-season tournament Round 3 if we advance
+    result: cancelled
+    note: Tournament Round 3 — did not play (eliminated in R1)
